@@ -1,0 +1,14 @@
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+
+const MainApp = () => {
+  useEffect(() => {
+  }, []);
+
+  return <App />;
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MainApp />);

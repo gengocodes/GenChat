@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 
 // SDK
@@ -63,16 +64,47 @@ function ChatRoom() {
   const query = messagesRef.orderBy('createdAt').limit(25);
   const [messages] = useCollectionData(query, {idField: 'id'}); // Listen to data with a hook
 
+  const [formValue, setFormValue] = useState('');
+
+  const sendMessage = async(e) => {
+
+    e.preventDefault(); // Prevent page from refreshing when clicking submit button
+    const { uid, photoURL } = auth.currentUser;
+
+    await messagesRef.add({ // Create new document in firestore
+      text: formValue,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      uid,
+      photoURL
+    })
+
+    setFormValue(''); // Reset to empty string
+  }
+  
   return (
     <>
       <div>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
       </div>
+
+      <form onSubmit={sendMessage}> {/* Submit Message to Firestore */}
+
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+
+        <button type="submit">Y</button>
+
+      </form>
     </>
   )
 }
 function ChatMessage(props) {
-  const { text, uid } = props.message;
+  const { text, uid, photoURL } = props.message;
 
-  return (<p>{text}</p>)
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  return (
+    <div className={`message ${messageClass}`}>
+      <img src={photoURL} />
+      <p>{text}</p>
+    </div>
+  )
 } 

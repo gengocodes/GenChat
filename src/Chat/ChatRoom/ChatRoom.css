@@ -5,7 +5,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-header {
+.chatroom-header {
     background-color: #20232a;
     height: 60px;
     color: #ffffff;

@@ -1,4 +1,4 @@
-.sign-out {
+.back-button {
     position: absolute;
     background-color: #4a90e2;
     color: white;
@@ -10,9 +10,5 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-    right: 1rem;
-  }
-  
- .sign-out:hover {
-    background-color: #357ab8;
+    left: 1rem;
   }

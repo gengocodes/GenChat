@@ -1,0 +1,28 @@
+.post-header {
+    height: 4rem;
+    display: flex;
+    background: white;
+    width: 100vw;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    left: 0;
+    justify-content: space-between;
+    display: flex;
+    padding: 0 10px;
+}
+/* .post-header {
+    background-color: #20232a;
+    height: 60px;
+    color: #ffffff;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+} */

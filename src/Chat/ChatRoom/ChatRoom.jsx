@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import './ChatRoom.css';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import SignOut from '../../Auth/SignOut/SignOut';
+import BackButton from '../../Buttons/BackButton/BackButton';
 import { auth, firestore, firebase } from '../../FirebaseConfig';
 // Hooks
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -38,7 +39,8 @@ function ChatRoom() {
 
     return (
       <>
-        <header>
+        <header className='chatroom-header'>
+          <BackButton />
           <SignOut />
         </header>
         <main>

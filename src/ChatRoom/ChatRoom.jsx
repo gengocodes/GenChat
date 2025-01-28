@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
+import './ChatRoom.css';
 import ChatMessage from '../ChatMessage/ChatMessage';
+import SignOut from '../SignOut/SignOut';
 import { auth, firestore, firebase } from '../FirebaseConfig/FirebaseConfig';
 // Hooks
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -15,7 +17,6 @@ function ChatRoom() {
     const [formValue, setFormValue] = useState('');
   
     const sendMessage = async(e) => {
-  
       e.preventDefault(); // Prevent page from refreshing when clicking submit button
       const { uid, photoURL } = auth.currentUser;
   
@@ -32,19 +33,27 @@ function ChatRoom() {
     
     return (
       <>
+        <header>
+          <SignOut />
+        </header>
         <main>
+        
           {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
           <div ref={dummy}></div>
         </main>
-  
-        <form onSubmit={sendMessage}> {/* Submit Message to Firestore */}
-  
-          <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-  
-          <button type="submit">Y</button>
-  
-        </form>
+
+        {auth.currentUser && ( // Only show the form if the user is signed in
+          <form onSubmit={sendMessage}> {/* Submit Message to Firestore */}
+    
+            <input 
+              value={formValue} 
+              onChange={(e) => setFormValue(e.target.value)} 
+              placeholder="Type a message" 
+            />
+            <button type="submit">X</button>
+          </form>
+        )}
       </>
     )
 }

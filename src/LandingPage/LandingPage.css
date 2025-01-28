@@ -1,0 +1,53 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b1f27;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #f0f2f5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Landing page container */
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Content inside the landing page */
+.landing-content {
+    max-width: 500px;
+    width: 90%;
+    background: #2b3444;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.landing-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f4c542; /* Gold highlight */
+    margin-bottom: 10px;
+}
+
+.landing-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}

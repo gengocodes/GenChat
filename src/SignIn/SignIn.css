@@ -1,0 +1,26 @@
+.sign-in-button {
+  color: #1b1f27;
+  background: #f4c542;
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-button:hover {
+  background: #ffd75e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.sign-in-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

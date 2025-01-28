@@ -1,4 +1,5 @@
 import React from 'react'
+import './SignIn.css'
 import { auth, firebase } from '../FirebaseConfig/FirebaseConfig';
 
 function SignIn() {
@@ -14,7 +15,9 @@ function SignIn() {
     };
   
     return (
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+      <button onClick={signInWithGoogle} className="sign-in-button">
+        Sign in with Google
+        </button>
     );
 }
   

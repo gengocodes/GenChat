@@ -1,5 +1,6 @@
 import React from 'react'
 import { auth } from '../FirebaseConfig/FirebaseConfig';
+import "./ChatMessage.css";
 
 function ChatMessage(props) {
 

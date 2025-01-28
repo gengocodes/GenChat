@@ -7,14 +7,8 @@ import HomePage from './HomePage/HomePage';
 
 // Libraries
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { auth } from './FirebaseConfig/FirebaseConfig';
-// Hooks
-import { useAuthState} from 'react-firebase-hooks/auth';
-
 
 function App() {
-
-  const [user] = useAuthState(auth);
 
   return (
     <div className="App">

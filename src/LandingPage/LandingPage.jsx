@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './LandingPage.css'
 import SignIn from '../SignIn/SignIn'
-import HomePage from '../HomePage/HomePage';
 
 import { auth } from '../FirebaseConfig/FirebaseConfig';
 // Hooks

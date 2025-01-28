@@ -1,6 +1,6 @@
 import React from 'react'
 import './SignIn.css'
-import { auth, firebase } from '../FirebaseConfig/FirebaseConfig';
+import { auth, firebase } from '../../FirebaseConfig';
 
 function SignIn() {
     

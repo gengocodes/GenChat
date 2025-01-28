@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignOut.css';
-import { auth } from '../FirebaseConfig/FirebaseConfig';
+import { auth } from '../../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
 function SignOut() {

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './LandingPage.css'
-import SignIn from '../SignIn/SignIn'
+import SignIn from '../Auth/SignIn/SignIn'
 
-import { auth } from '../FirebaseConfig/FirebaseConfig';
+import { auth } from '../FirebaseConfig';
 // Hooks
 import { useAuthState} from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';

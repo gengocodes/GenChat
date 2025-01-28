@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ChatRoom from './ChatRoom/ChatRoom';
-import SignIn from './SignIn/SignIn';
+import ChatRoom from './Chat/ChatRoom/ChatRoom';
+import SignIn from './Auth/SignIn/SignIn';
 import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 

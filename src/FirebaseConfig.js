@@ -3,6 +3,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
+// import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { useAuthState} from 'react-firebase-hooks/auth';
 
 firebase.initializeApp ({
   apiKey: "AIzaSyACdu9cMRFJg0NEi9jtN_HruTBq2sN8tKs",

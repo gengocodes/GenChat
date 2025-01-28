@@ -5,35 +5,59 @@ img {
     margin: 2px 5px;
 }
 .message {
+    flex-wrap: wrap;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 10px 0;
     gap: 10px;
+    position: relative;
 }
 p {
+    position: relative;
     max-width: 500px;
-    margin-bottom: 12px;
     line-height: 1.6;
     padding: 10px 20px;
     border-radius: 25px;
     position: relative;
     font-size: 1rem;
+    margin: 0;
 }
-  
 .sent {
     flex-direction: row-reverse;
 }
-  
 .sent p {
     color: white;
     background: #4a90e2;
     align-self: flex-end;
 }
-  
- .received p {
+
+.received p {
     background: #2d3138;
     color: #ffffff;
 }
+
+.timedate {
+    display: flex;
+    flex-direction: column; /* Stack time and date vertically */
+    justify-content: center;
+    align-items: flex-start; /* Align them to the left */
+    margin: 15px 5px 0 5px;
+}
+.time, .date {
+    font-size: 0.8rem;
+    color: #999;
+    display: block;
+}
+.date {
+    display: none; /* Initially hidden */
+}
+p:hover + .timedate .time {
+    display: none;
+}
+p:hover + .timedate .date {
+    display: block;
+}
+
 @media (max-width: 768px) {
     p {
       font-size: 0.9rem;

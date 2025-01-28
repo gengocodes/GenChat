@@ -45,6 +45,10 @@ function ChatRoom() {
         </header>
         <main>
         
+          {/* messages.map(): loops over each item in the messages array */}
+          {/* msg: Each individual item in the messages array represents a message object */}
+          {/* mesasge=(msg): passing the current msg object as a prop to ChatMessage. 
+          So, inside the ChatMessage component, msg can be accesed through props.message */}
           {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
           <div ref={dummy}></div>

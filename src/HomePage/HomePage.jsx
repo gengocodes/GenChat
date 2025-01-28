@@ -1,7 +1,9 @@
 import React from 'react';
 import './HomePage.css';
 
+import { auth } from '../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
+import SignOut from '../Auth/SignOut/SignOut';
 
 function HomePage() {
 
@@ -14,10 +16,13 @@ function HomePage() {
         navigate('/PostRoom');
     }
 
+    const { photoURL } = auth.currentUser;
+    
     return (
         <div className="homepage-container">
             <div className="homepage-content">
                 <h1 className="homepage-title">Welcome Back!</h1>
+                <img src={photoURL} alt="" />
                 <p className="homepage-subtitle">What do you want to do?</p>
                 <button onClick={navChatRoom} className="chat-button">
                 Chat
@@ -25,6 +30,7 @@ function HomePage() {
                 <button onClick={navPostRoom} className="post-button">
                 Post
                 </button>
+                <SignOut className="signout-button" />
             </div>
       </div>
     )

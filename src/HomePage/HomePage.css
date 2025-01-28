@@ -22,7 +22,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: rgb(226, 146, 146);
+    background: rgb(15, 14, 14);
     text-align: center;
     padding: 20px;
 }
@@ -88,4 +88,17 @@ body {
 .homepage-button:active {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.signout-button {
+    color: #1b1f27;
+    background: #f4c542;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position:sticky;
 }

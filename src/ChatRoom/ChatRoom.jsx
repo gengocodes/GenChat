@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './ChatRoom.css';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import SignOut from '../SignOut/SignOut';
@@ -31,6 +31,11 @@ function ChatRoom() {
       dummy.current.scrollIntoView({behavior:'smooth'}); // Auto scroll down when user submits a message
     }
     
+    // Scroll to the bottom when new messages are added or the component is loaded
+    useEffect(() => {
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]); // Trigger scroll every time `messages` changes
+
     return (
       <>
         <header>

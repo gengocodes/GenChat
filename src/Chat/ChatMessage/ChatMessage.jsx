@@ -5,7 +5,7 @@ import "./ChatMessage.css";
 function ChatMessage(props) {
 
     // destructure message prop
-    const { text, uid, photoURL, createdAt } = props.message;
+    const { text, uid, photoURL, createdAt, displayName  } = props.message;
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
@@ -23,6 +23,7 @@ function ChatMessage(props) {
             <div className="timedate">
                 <span className="time">{formattedTime}</span>
                 <span className="date">Sent at {formattedDate}.</span>
+                <span >Name:{displayName}</span>
             </div>
         </div>
     )

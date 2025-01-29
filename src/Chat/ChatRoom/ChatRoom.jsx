@@ -19,13 +19,14 @@ function ChatRoom() {
   
     const sendMessage = async(e) => {
       e.preventDefault(); // Prevent page from refreshing when clicking submit button
-      const { uid, photoURL } = auth.currentUser;
+      const { uid, photoURL, displayName } = auth.currentUser;
   
       await messagesRef.add({ // Create new document in firestore
         text: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         uid,
-        photoURL
+        photoURL,
+        displayName : displayName || "Unknown User" // Fallback is displayName is Null
       })
   
       setFormValue(''); // Reset to empty string

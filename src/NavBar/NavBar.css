@@ -1,0 +1,78 @@
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    width: 300px;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 64px);
+    background-color: pink;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #navbar a {
+    display: block;
+    padding: 10px 30px;
+    color: #4d4e53;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Chakra Petch, serif;
+    font-weight: bold;
+  }
+  #navbar p {
+    display: block;
+    padding: 10px 30px;
+    color: #4d4e53;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Chakra Petch, serif;
+    font-weight: bold;
+  }
+  #navbar p:hover {
+    color: #009900;
+  }
+  
+  #navbar a:hover {
+    color: #009900;
+  }
+  
+  a#nav-css:hover {
+    color: #0040ff;
+  }
+  
+  a#nav-css2:hover {
+    color: #0040ff;
+  }
+  
+  a#nav-css3:hover {
+    color: #0040ff;
+  }
+  
+  a#nav-css4:hover {
+    color: #0040ff;
+  }
+  
+  a#nav-css5:hover {
+    color: #0040ff;
+  }
+  
+  a#nav-css6:hover {
+    color: #0040ff;
+  }
+  
+  #navbar ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 80%;
+    font-family: monospace;
+    font-size: 1.1rem;
+  }
+  
+  #navbar li {
+    color: #000000;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }

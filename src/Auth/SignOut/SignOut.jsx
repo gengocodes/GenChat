@@ -4,6 +4,7 @@ import { auth } from '../../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
 function SignOut(props) {
+  
   const navigate = useNavigate();
 
   const handleSignOut = () => {

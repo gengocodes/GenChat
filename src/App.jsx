@@ -5,6 +5,7 @@ import SignIn from './Auth/SignIn/SignIn';
 import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 import PostRoom from './Post/PostRoom/PostRoom';
+import Profile from './Profile/Profile';
 
 // Libraries
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/PostRoom" element={<PostRoom />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </Router>
 

@@ -36,6 +36,7 @@
     top: -100px;
     left: -100px;
     border-radius: 50%;
+    z-index: 1;
     animation: floatingGlow 6s infinite alternate ease-in-out;
   }
   

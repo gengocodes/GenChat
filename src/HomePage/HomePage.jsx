@@ -16,12 +16,12 @@ function HomePage() {
         navigate('/PostRoom');
     }
 
-    const { photoURL } = auth.currentUser;
+    const { photoURL, displayName } = auth.currentUser;
     
     return (
         <div className="homepage-container">
             <div className="homepage-content">
-                <h1 className="homepage-title">Welcome Back!</h1>
+                <h1 className="homepage-title">Welcome Back, {displayName}!</h1>
                 <img src={photoURL} alt="" />
                 <p className="homepage-subtitle">What do you want to do?</p>
                 <button onClick={navChatRoom} className="chat-button">

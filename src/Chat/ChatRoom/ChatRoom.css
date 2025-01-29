@@ -7,7 +7,7 @@ body {
     background-color: #20232a;
     height: 60px;
     color: #ffffff;
-    position: fixed;
+    position: sticky;   
     width: 100vw;
     top: 0;
     display: flex;

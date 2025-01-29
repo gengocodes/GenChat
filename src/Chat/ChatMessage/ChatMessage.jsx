@@ -23,7 +23,6 @@ function ChatMessage(props) {
             <div className="timedate">
                 <span className="time">{formattedTime}</span>
                 <span className="date">Sent at {formattedDate}.</span>
-                <span >Name:{displayName}</span>
             </div>
         </div>
     )

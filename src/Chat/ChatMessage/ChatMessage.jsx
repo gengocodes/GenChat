@@ -5,7 +5,7 @@ import "./ChatMessage.css";
 function ChatMessage(props) {
 
     // destructure message prop
-    const { text, uid, photoURL, createdAt, displayName  } = props.message;
+    const { text, uid, photoURL, createdAt } = props.message;
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 

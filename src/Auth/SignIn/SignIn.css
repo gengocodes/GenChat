@@ -1,26 +1,45 @@
 .sign-in-button {
-  color: #1b1f27;
-  background: #f4c542;
-  max-width: 400px;
-  width: 100%;
-  margin: 20px auto;
-  padding: 15px 20px;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  display: inline-block;
+  background: rgb(140, 133, 133);
+  color: #1e293b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
 .sign-in-button:hover {
-  background: #ffd75e;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: rgb(120, 119, 119);
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .sign-in-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Shine Effect */
+.sign-in-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 300%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: left 0.6s ease-in-out;
+}
+
+.sign-in-button:hover::before {
+  left: 100%;
 }

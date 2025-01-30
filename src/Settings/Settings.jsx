@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Settings() {
 
-    const [submit, setSubmit] = useState(0);
     const { displayName } = auth.currentUser;
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -23,9 +22,6 @@ function Settings() {
         }
     }, [displayName]);
 
-    const submitButton = () => {
-        navigate('/Updated');
-    }
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent page reload on submit
 

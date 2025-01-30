@@ -2,7 +2,6 @@ import React from 'react';
 import './Profile.css';
 import BackButton from '../Buttons/BackButton/BackButton';
 import SignOut from '../Auth/SignOut/SignOut';
-import Settings from '../Settings/Settings';
 
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../FirebaseConfig';

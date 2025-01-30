@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/ChatRoom" element={<ChatRoom />} />

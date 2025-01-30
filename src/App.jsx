@@ -10,7 +10,7 @@ import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
 
 // Libraries
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 

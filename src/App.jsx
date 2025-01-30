@@ -6,6 +6,8 @@ import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 import PostRoom from './Post/PostRoom/PostRoom';
 import Profile from './Profile/Profile';
+import Settings from './Settings/Settings';
+import Updated from './Settings/Updated/Updated';
 
 // Libraries
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -22,6 +24,8 @@ function App() {
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/PostRoom" element={<PostRoom />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Settings" element={<Settings />} />
+          <Route path="/Updated" element={<Updated />} />
         </Routes>
       </Router>
 

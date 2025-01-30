@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import ChatRoom from './Chat/ChatRoom/ChatRoom';
 import SignIn from './Auth/SignIn/SignIn';
@@ -10,31 +10,38 @@ import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
 
 // Libraries
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { auth } from './FirebaseConfig';  // Import Firebase configuration
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check if the user is signed in
+  useEffect(() => {
+    // Update authentication status based on Firebase auth
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setIsAuthenticated(!!user);  // true if user exists, false if not
+    });
+    
+    return () => unsubscribe();  // Cleanup on component unmount
+  }, []);
 
   return (
     <div className="App">
       <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/ChatRoom" element={<ChatRoom />} />
-          <Route path="/HomePage" element={<HomePage />} />
-          <Route path="/SignIn" element={<SignIn />} />
-          <Route path="/PostRoom" element={<PostRoom />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Settings" element={<Settings />} />
-          <Route path="/Updated" element={<Updated />} />
+          <Route path="/ChatRoom" element={isAuthenticated ? <ChatRoom /> : <Navigate to="/" />} />
+          <Route path="/HomePage" element={isAuthenticated ? <HomePage /> : <Navigate to="/" />} />
+          <Route path="/PostRoom" element={isAuthenticated ? <PostRoom /> : <Navigate to="/" />} />
+          <Route path="/SignIn" element={isAuthenticated ? <SignIn /> : <Navigate to="/" />} />
+          <Route path="/Profile" element={isAuthenticated ? <Profile /> : <Navigate to="/" />} />
+          <Route path="/Settings" element={isAuthenticated ? <Settings /> : <Navigate to="/" />} />
+          <Route path="/Updated" element={isAuthenticated ? <Updated /> : <Navigate to="/" />} />
         </Routes>
       </Router>
-
     </div>
   );
 }
 
 export default App;
-
-
-
-

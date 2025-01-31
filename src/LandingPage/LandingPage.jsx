@@ -4,24 +4,29 @@ import SignIn from "../Auth/SignIn/SignIn";
 import Logo from "../assets/GenChat.png";
 import { motion } from "framer-motion";
 import { auth } from "../FirebaseConfig";
+import video1 from "../assets/video1.mp4";
 // Hooks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
-
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-          // If the user is logged in, navigate to HomePage
-          navigate('/HomePage');
-        }
-      }, [user, navigate]);
+  useEffect(() => {
+    if (user) {
+      navigate('/HomePage');
+    }
+  }, [user, navigate]);
 
   return (
     <div className="landing-container">
+      <div className="hello">
+      <video autoPlay loop muted width="100%" height="100%">
+  <source src={video1} type="video/mp4" />
+</video>
+
+      </div>
       <motion.div
         className="landing-card"
         initial={{ opacity: 0, y: 50 }}
@@ -41,7 +46,9 @@ function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-        >Welcome to GenChat</motion.h1>
+        >
+          Welcome to GenChat
+        </motion.h1>
         <motion.p
           className="landing-subtitle"
           initial={{ opacity: 0 }}
@@ -59,7 +66,8 @@ function LandingPage() {
         </motion.div>
       </motion.div>
     </div>
-  )
+  );
 }
+
 
 export default LandingPage

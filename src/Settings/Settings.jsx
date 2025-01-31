@@ -58,6 +58,8 @@ function Settings() {
                 id="firstName"
                 placeholder='First Name'
                 onChange={(e) => setFirstName(e.target.value)}
+                minLength="1"
+                maxLength="15"
                 required
             />
             <label htmlFor="lastName">Last Name:</label>
@@ -66,6 +68,8 @@ function Settings() {
                 id="lastName"
                 placeholder='Last Name'
                 onChange={(e) => setLastName(e.target.value)}
+                minLength="1"
+                maxLength="15"
                 required
             />
             <input type="submit" value="Submit" className='settings-submit' />

@@ -21,12 +21,6 @@ function LandingPage() {
 
   return (
     <div className="landing-container">
-      <div className="hello">
-      <video autoPlay loop muted width="100%" height="100%">
-  <source src={video1} type="video/mp4" />
-</video>
-
-      </div>
       <motion.div
         className="landing-card"
         initial={{ opacity: 0, y: 50 }}

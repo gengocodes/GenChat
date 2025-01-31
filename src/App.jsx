@@ -8,6 +8,7 @@ import PostRoom from './Post/PostRoom/PostRoom';
 import Profile from './Profile/Profile';
 import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
+import Particles from './LandingPage/particles';
 
 // Libraries
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <Particles />
       <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />

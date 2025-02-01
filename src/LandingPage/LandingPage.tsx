@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./LandingPage.css";
 import SignIn from "../Auth/SignIn/SignIn";
-import Logo from "../assets/GenChat.png";
-import { motion } from "framer-motion";
+// import Logo from "../assets/GenChat.png";
+import Background from './particles';
 import { getAuth } from "firebase/auth";
 // import video1 from "../assets/video1.mp4";
 // Hooks
@@ -23,47 +23,13 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="landing-container">
-      <motion.div
-        className="landing-card"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <motion.img
-          src={Logo}
-          alt=""
-          className="landing-logo"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        />
-        <motion.h1
-          className="landing-title"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          Welcome to GenChat
-        </motion.h1>
-        <motion.p
-          className="landing-subtitle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          Powered by Gengo-bit
-        </motion.p>
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          <SignIn className="signin-button" />
-        </motion.div>
-      </motion.div>
+      <Background id="landing-background" className="landing-background" />
+      <div className="div1">  </div>
+      <div className="div2"> <SignIn /> </div>
+      
+          
     </div>
   );
 }
-
 
 export default LandingPage

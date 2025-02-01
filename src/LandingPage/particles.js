@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */ //disable the unused variable warning throughout the entire file
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-// import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+// import { loadAll } from "@/tsparticles/all"; // if you are going to use loadAll, install the "@tsparticles/all" package too.
+// import { loadFull } from "tsparticles"; // if you are going to use loadFull, install the "tsparticles" package too.
+import { loadSlim } from "@tsparticles/slim"; // if you are going to use loadSlim, install the "@tsparticles/slim" package too.
 import React from "react";
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+// import { loadBasic } from "@tsparticles/basic"; // if you are going to use loadBasic, install the "@tsparticles/basic" package too.
 
 
 
-const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) => {
+const ParticlesComponent = ({ id, className }) => {
 
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
@@ -27,7 +27,7 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
     });
   }, []);
 
-  const particlesLoaded = (/** @type {any} */ container) => {
+  const particlesLoaded = (container) => {
     console.log(container);
   };
 
@@ -36,7 +36,7 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
     () => ({
       background: {
         color: {
-          value: "#1E2F97",
+          value: "",
         },
       },
       fpsLimit: 120,
@@ -44,11 +44,11 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push", //push = add more, repulse 
           },
           onHover: {
             enable: true,
-            mode: 'grab',
+            mode: 'repulse', //grab
           },
         },
         modes: {
@@ -69,7 +69,7 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
           color: "#FFFFFF",
           distance: 150,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.2,
           width: 1,
         },
         move: {
@@ -79,17 +79,17 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
             default: "bounce",
           },
           random: true,
-          speed: 1,
+          speed: 3,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 350, // how many links
         },
         opacity: {
-          value: 1.0,
+          value: 0.4,
         },
         shape: {
           type: "circle",
@@ -103,9 +103,7 @@ const ParticlesComponent = (/** @type {{ id: string | undefined; }} */ props) =>
     [],
   );
 
-
-  // @ts-ignore
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return <Particles id={id} className={className} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;

@@ -16,101 +16,36 @@
     overflow: hidden;
   }
 
-  .landing-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.landing-container {
+    display: grid;
+    grid-template-columns: 0.2fr 3fr 2fr 0.2fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     height: 100vh;
     width: 100vw;
-    padding: 20px;
-    overflow: hidden;
-  }
-
-  .landing-container::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(244, 197, 66, 0.2), transparent);
-    top: -100px;
-    left: -100px;
-    border-radius: 50%;
-    z-index: 1;
-    animation: floatingGlow 6s infinite alternate ease-in-out;
-  }
-  @keyframes floatingGlow {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(30px);
-    }
-  }
-
-  .landing-card {
-    max-width: 450px;
-    width: 90%;
-    background: rgba(30, 41, 59, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .landing-card:hover {
-    transform: scale(1.02);
-  }
-
-  .landing-logo {
-    height: 70px;
-    width: auto;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .landing-logo:hover {
-    transform: scale(1.1);
-  }
-  
-  .landing-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(244, 197, 66, 0.3);
-  }
-  
-  .landing-subtitle {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-  }
-    
-  @keyframes floatingParticles {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-20px);
-    }
-  }
-  
-  .landing-container::after {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-    bottom: -50px;
-    right: -50px;
-    border-radius: 50%;
-    z-index: -1;
-    animation: floatingParticles 6s infinite alternate ease-in-out;
-  }
+    z-index: 0;
+    background-image: url('./landingpage-background.png'); /* Correct background image syntax */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+.div1 { 
+  grid-area: 2 / 2 / 3 / 3; 
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.div2 { 
+  grid-area: 2 / 3 / 3 / 4; 
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.landing-background{
+  position: relative;
+  z-index: 1;
+}
   
   @media (max-width:480px) and (max-width:760px){
     .landing-title{

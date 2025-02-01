@@ -3,7 +3,7 @@ declare module "*.png" {
     export default value;
   }
 
-declare module './LandingPage/particles' {
+declare module './LandingPage/particles.js' {
     const particles: any; 
     export default particles;
 }

@@ -122,7 +122,12 @@ body {
   gap: 1rem;  /* Adjust this value to control how close or far the links are */
 }
 
-.div2 form .links a {
+.div2 form .links button {
+  background: transparent;
+  font-family: "Raleway";
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
   font-size: 0.8rem;
   text-decoration: none;
   color: white;
@@ -136,6 +141,9 @@ body {
   justify-content: center;
   width: 100%;
   font-size: 1rem;
+}
+.socmed-links p{
+  margin-bottom: -2rem;
 }
 
 .div2 form input[type="submit"] {

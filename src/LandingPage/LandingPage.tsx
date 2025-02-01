@@ -28,7 +28,7 @@ const LandingPage: React.FC = () => {
       <div className="div1">  </div>
       <div className="div2">
         <form>
-            <img src={Logo} className="landing-logo" />
+            <img src={Logo} className="landing-logo" alt='' />
             <div className="input-box">
               <input type="text" id="username" placeholder="Username"  required />
             </div>
@@ -37,11 +37,11 @@ const LandingPage: React.FC = () => {
             </div>
             <input type="submit" id="Login" placeholder="" value="Log In" className="landing-submit" required />
             <div className="links">
-                <a className="forget-pass">Forgot password?</a>
-                <a className="sign-up">Sign Up</a>
+                <button className="forget-pass">Forgot password?</button>
+                <button className="sign-up">Sign Up</button>
             </div>
             <div className="socmed-links">
-                <a className="forget-pass">Log In with:</a>
+                <p>Log In with:</p>
             </div>
             <div className="socmed-container">
             <SignInGoogle className="signin-button" />

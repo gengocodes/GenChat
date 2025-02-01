@@ -13,7 +13,7 @@ function SignOut(props: { className: string; }) {
   };
 
   //use css in sigout.css if no props
-  const buttonClass = `sign-out ${props.className || ''}`;
+  const buttonClass = `${props.className || ''}`;
 
   return (
     auth.currentUser && (

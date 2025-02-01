@@ -8,7 +8,7 @@ import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
 // import Particles from './LandingPage/particles';
 import ChatRoom from './Chat/ChatRoom/ChatRoom';
-import SignIn from './Auth/SignIn/SignIn';
+import SignIn from './Auth/SignIn/SignInGoogle';
 
 // Libraries
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';

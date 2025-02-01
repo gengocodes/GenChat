@@ -1,8 +1,7 @@
 .sign-in-button {
   font-family:Georgia, 'Times New Roman', Times, serif;
   display: inline-block;
-  background: rgb(140, 133, 133);
-  color: #1e293b;
+  background: transparent;
   font-size: 0.7rem;
   font-weight: 700;
   padding: 14px 28px;
@@ -14,6 +13,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  height: 50%;
+  width: 50%;
   z-index: 99999;
 }
 
@@ -34,8 +35,6 @@
   position: absolute;
   top: 50%;
   left: -100%;
-  width: 300%;
-  height: 200%;
   background: rgba(255, 255, 255, 0.3);
   transform: rotate(30deg);
   transition: left 0.6s ease-in-out;
@@ -43,4 +42,11 @@
 
 .sign-in-button:hover::before {
   left: 100%;
+}
+
+.google{
+  align-items: center;  /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  max-width: 50px;
+  max-height: 50px;
 }

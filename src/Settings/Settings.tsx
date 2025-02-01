@@ -55,15 +55,19 @@ const Settings: React.FC = () => {
         </header>
         <form className='settings-forms' onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name:</label>
-            <TextInput                     
+            <TextInput                
+                type='text'     
                 id="firstName"
                 placeholder="First Name"
+                value=''
                 onChange={(e) => setFirstName(e.target.value)} 
             />
             <label htmlFor="lastName">Last Name:</label>
-            <TextInput                     
+            <TextInput       
+                type='text'              
                 id="lastName"
                 placeholder="Last Name"
+                value=''
                 onChange={(e) => setLastName(e.target.value)} 
             />
             <input type="submit" value="Submit" className='settings-submit' />

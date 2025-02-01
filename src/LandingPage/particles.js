@@ -54,7 +54,7 @@ const ParticlesComponent = ({ id, className }) => {
         modes: {
           push: {
             distance: 200,
-            duration: 15,
+            duration: 10,
           },
           grab: {
             distance: 150,
@@ -86,7 +86,7 @@ const ParticlesComponent = ({ id, className }) => {
           density: {
             enable: true,
           },
-          value: 350, // how many links
+          value: 400, // how many links
         },
         opacity: {
           value: 0.4,

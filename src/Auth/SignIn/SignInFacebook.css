@@ -1,0 +1,6 @@
+.facebook{
+    align-items: center;  /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    max-width: 50px;
+    max-height: 50px;
+}

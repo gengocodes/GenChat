@@ -29,7 +29,6 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {/* <Particles id={undefined} /> */}
       <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -42,6 +41,7 @@ const App: React.FC = () => {
           <Route path="/Updated" element={isAuthenticated ? <Updated /> : <Navigate to="/" />} />
         </Routes>
       </Router>
+      <Particles id={undefined} />
     </div>
   );
 }

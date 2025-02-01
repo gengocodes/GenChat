@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Settings.css';
 import BackButton from '../Buttons/BackButton/BackButton';
 import SignOut from '../Auth/SignOut/SignOut';

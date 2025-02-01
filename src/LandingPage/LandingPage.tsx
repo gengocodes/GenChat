@@ -3,7 +3,7 @@ import "./LandingPage.css";
 import SignIn from "../Auth/SignIn/SignIn";
 import Logo from "../assets/GenChat.png";
 import { motion } from "framer-motion";
-import { getAuth, User } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 // import video1 from "../assets/video1.mp4";
 // Hooks
 import { useAuthState } from "react-firebase-hooks/auth";

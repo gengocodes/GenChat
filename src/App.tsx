@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import ChatRoom from './Chat/ChatRoom/ChatRoom';
-import SignIn from './Auth/SignIn/SignIn';
 import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 import PostRoom from './Post/PostRoom/PostRoom';
@@ -9,12 +7,14 @@ import Profile from './Profile/Profile';
 import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
 import Particles from './LandingPage/particles';
+import ChatRoom from './Chat/ChatRoom/ChatRoom';
+import SignIn from './Auth/SignIn/SignIn';
 
 // Libraries
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { auth } from './FirebaseConfig';  // Import Firebase configuration
 
-function App() {
+const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Check if the user is signed in
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Particles />
+      {/* <Particles id={undefined} /> */}
       <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />

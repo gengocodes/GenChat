@@ -16,7 +16,9 @@ function HomePage() {
         navigate('/PostRoom');
     }
 
-    const { photoURL, displayName } = auth.currentUser;
+    const user = auth.currentUser;
+    const photoURL = user?.photoURL || '';
+    const displayName = user?.displayName || '';
     
     return (
         <div className="homepage-container">

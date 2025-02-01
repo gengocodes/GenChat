@@ -3,13 +3,15 @@ import "./LandingPage.css";
 import SignIn from "../Auth/SignIn/SignIn";
 import Logo from "../assets/GenChat.png";
 import { motion } from "framer-motion";
-import { auth } from "../FirebaseConfig";
-import video1 from "../assets/video1.mp4";
+import { getAuth, User } from "firebase/auth";
+// import video1 from "../assets/video1.mp4";
 // Hooks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
-function LandingPage() {
+const auth = getAuth();
+
+const LandingPage: React.FC = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 

@@ -5,7 +5,9 @@ import { auth } from '../FirebaseConfig';
 
 function NavBar() {
 
-    const { photoURL, displayName } = auth.currentUser;
+    const user = auth.currentUser;
+    const photoURL = user?.photoURL || '';
+    const displayName = user?.displayName || '';
     const navigate = useNavigate();
 
     const handleProfile = () => {

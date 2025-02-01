@@ -1,13 +1,25 @@
 import React from 'react'
-import { auth } from '../../FirebaseConfig';
+import { auth, firebase } from '../../FirebaseConfig';
 import "./ChatMessage.css";
 
-function ChatMessage(props) {
+// Define the expected shape of message props
+interface MessageProps {
+    text: string;
+    uid: string;
+    photoURL: string;
+    createdAt?: firebase.firestore.Timestamp | null; // Firestore timestamps can be null or undefined
+}
+  
+interface ChatMessageProps {
+    message: MessageProps;
+}
+
+const  ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
 
     // destructure message prop
-    const { text, uid, photoURL, createdAt } = props.message;
-
-    const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+    const { text, uid, photoURL, createdAt } = message;
+    // Ensure auth.currentUser is not null before accessing uid
+    const messageClass = uid === auth.currentUser?.uid ? 'sent' : 'received';
 
     // Retrieve the createdAt timestamp in Firestore
     const messageTime = createdAt ? createdAt.toDate() : new Date();

@@ -2,7 +2,11 @@ import React from 'react'
 import './SignIn.css'
 import { auth, firebase, firestore } from '../../FirebaseConfig';
 
-function SignIn() {
+interface SignInProps {
+  className?: string;
+}
+
+const SignIn: React.FC<SignInProps> = ({ className }) => {
     
     const signInWithGoogle = async () => {
       try {
@@ -11,18 +15,19 @@ function SignIn() {
 
         // Get user info from result
         const user = result.user;
-        const {
-          uid,
-          displayName,
-          photoURL,
-          email,
-          emailVerified,
-          phoneNumber,
-          providerId,
-          isAnonymous,
-          metadata,
-          refreshToken,
-        } = user;
+        if (user) {
+          const {
+            uid,
+            displayName,
+            photoURL,
+            email,
+            emailVerified,
+            phoneNumber,
+            providerId,
+            isAnonymous,
+            metadata,
+            refreshToken,
+          } = user;
 
         // Create a user object with all available data
         const userData = {
@@ -52,13 +57,18 @@ function SignIn() {
         }
 
         console.log("User signed in successfully");
-      } catch (error) {
-        console.error("Error during sign-in:", error.message);
+      } else {
+        console.error("Error: No user returned from sign-in.");
       }
-    };
+    }
+    catch (error:any) {
+        console.error("Error during sign-in:", error.message);
+    }
+};
+  
   
     return (
-      <button onClick={signInWithGoogle} className="sign-in-button">
+      <button onClick={signInWithGoogle} className={className}>
         Sign in with Google
         </button>
     );

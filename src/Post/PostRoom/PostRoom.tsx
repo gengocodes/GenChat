@@ -9,7 +9,7 @@ function PostRoom() {
     <>
     <header className='post-header'>
         <BackButton />
-        <SignOut />
+        <SignOut className='' />
     </header>
     <NavBar />
     <p>

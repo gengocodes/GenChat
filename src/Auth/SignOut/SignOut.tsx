@@ -3,7 +3,7 @@ import './SignOut.css';
 import { auth } from '../../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-function SignOut(props) {
+function SignOut(props: { className: string; }) {
   
   const navigate = useNavigate();
 

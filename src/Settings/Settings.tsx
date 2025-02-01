@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, FormEvent } from 'react'
 import './Settings.css';
 import BackButton from '../Buttons/BackButton/BackButton';
 import SignOut from '../Auth/SignOut/SignOut';
+import TextInput from './Input/TextInput';
 
 import { auth, firestore } from '../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-function Settings() {
+const Settings: React.FC = () => {
 
-    const { displayName } = auth.currentUser;
+    const user = auth.currentUser;
+    const displayName = user?.displayName || '';
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const navigate = useNavigate();
@@ -22,19 +24,19 @@ function Settings() {
         }
     }, [displayName]);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Prevent page reload on submit
+
+        if (!user) return;
 
         const newName = `${firstName} ${lastName}`;
         // Update the displayName in Firebase Authentication
         try {
-            await auth.currentUser.updateProfile({
+            await user.updateProfile({
                 displayName: newName, // Update the name in Firebase Authentication
             });
             console.log("Display name updated in Firebase Authentication.");
 
-            // Store the updated name in Firestore
-            const user = auth.currentUser;
             await firestore.collection('users').doc(user.uid).update({
                 displayName: newName,  // Save the updated name in Firestore
             });
@@ -49,28 +51,20 @@ function Settings() {
     <div className='settings'>
         <header className="settings-header">
             <BackButton />
-            <SignOut />
+            <SignOut className='' />
         </header>
         <form className='settings-forms' onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name:</label>
-            <input
-                type="text"
+            <TextInput                     
                 id="firstName"
-                placeholder='First Name'
-                onChange={(e) => setFirstName(e.target.value)}
-                minLength="1"
-                maxLength="15"
-                required
+                placeholder="First Name"
+                onChange={(e) => setFirstName(e.target.value)} 
             />
             <label htmlFor="lastName">Last Name:</label>
-            <input
-                type="text"
+            <TextInput                     
                 id="lastName"
-                placeholder='Last Name'
-                onChange={(e) => setLastName(e.target.value)}
-                minLength="1"
-                maxLength="15"
-                required
+                placeholder="Last Name"
+                onChange={(e) => setLastName(e.target.value)} 
             />
             <input type="submit" value="Submit" className='settings-submit' />
         </form>
@@ -83,4 +77,5 @@ function Settings() {
   )
 }
 
-export default Settings
+export default Settings;
+

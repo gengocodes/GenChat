@@ -8,7 +8,9 @@ import { auth } from '../FirebaseConfig';
 
 function Profile() {
 
-  const { photoURL, displayName } = auth.currentUser;
+  const user = auth.currentUser;
+  const displayName = user?.displayName || '';
+  const photoURL = user?.photoURL || '';
   const navigate = useNavigate();
   
   const navigateSettings = () => {
@@ -19,7 +21,7 @@ function Profile() {
     <div className="profile-container">
         <header className='profile-header'>
           <BackButton />
-          <SignOut />
+          <SignOut className=''/>
         </header>
         <img src={photoURL} alt="" />
         {displayName}

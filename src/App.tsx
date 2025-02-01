@@ -6,7 +6,7 @@ import PostRoom from './Post/PostRoom/PostRoom';
 import Profile from './Profile/Profile';
 import Settings from './Settings/Settings';
 import Updated from './Settings/Updated/Updated';
-import Particles from './LandingPage/particles';
+// import Particles from './LandingPage/particles';
 import ChatRoom from './Chat/ChatRoom/ChatRoom';
 import SignIn from './Auth/SignIn/SignIn';
 
@@ -41,7 +41,7 @@ const App: React.FC = () => {
           <Route path="/Updated" element={isAuthenticated ? <Updated /> : <Navigate to="/" />} />
         </Routes>
       </Router>
-      <Particles id={undefined} />
+      {/* <Particles id={undefined} /> */}
     </div>
   );
 }

@@ -22,6 +22,7 @@ body {
 
 .landing-container {
     display: grid;
+    flex-wrap: wrap;
     grid-template-columns: 0.2fr 3fr 2fr 0.2fr;
     grid-template-rows: 1fr 10fr 1fr;
     grid-column-gap: 0px;
@@ -35,9 +36,9 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 .landing-logo{
-  height: 50px;
-  width: 50px;
-  margin: 1rem 0 1rem 0;
+  height: 18vh;
+  width: 10vw;
+  margin: -5vh 0 3vh 0;
 }
 .div1 { 
   grid-area: 2 / 2 / 3 / 3; 
@@ -95,7 +96,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 1vh;
 }
 
 .div2 form .input-box input {
@@ -105,7 +106,7 @@ body {
     border: 2px solid #f8f8f8;
     border-radius: 5px;
     color: #f8f8f8;
-    font-size: 1rem;
+    font-size: 100%;
     transition: 0.5s ease;
     z-index: 9;
     margin: 0; /* Ensure no extra margin */
@@ -128,7 +129,8 @@ body {
   margin: 0;
   padding: 0;
   font-weight: 100;
-  font-size: 0.8rem;
+  font-size: 1vw;
+  margin: 0 0.5vw 0 0.5vw;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease-in-out;
@@ -136,14 +138,13 @@ body {
 }
 
 .socmed-links{
-  margin: 2rem 0 2rem 0;
+  margin: 5vh 0 5vh 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 1rem;
 }
 .socmed-links p{
-  margin-bottom: -2rem;
+  margin-bottom: -3vh;
 }
 
 .div2 form input[type="submit"] {
@@ -158,17 +159,17 @@ body {
   border-radius: 10px;
   transition: 0.3s ease-in-out;
   text-align: center;
-  font-weight: 1000;
+  font-weight: 500;
   display: flex;
   align-items: center;  /* Vertically center */
   justify-content: center; /* Horizontally center */
 }
 .div2 form input[type= "submit"]:hover {
-    background: #223;
+    background: rgb(39, 39, 54);
 }
 .social-icon {
-  width: 48px; /* Set size for the button */
-  height: 48px;
+  width: 5vw;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,8 +179,8 @@ body {
 }
 
 .social-icon svg {
-  width: 24px; /* Set SVG size */
-  height: 24px;
+  width: 50%; /* Set SVG size */
+  height: 50%;
 }
 
 .social-icon:hover {
@@ -192,13 +193,8 @@ body {
   background: transparent;
 }
 
-  @media (max-width:480px) and (max-width:760px){
-    .landing-title{
-        font-size: 2rem;
-    }
-    .landing-subtitle{
-        font-size: 0.8rem;
-    }
-  }
+@media (max-width:480px) and (max-width:760px){
+
+}
 
   

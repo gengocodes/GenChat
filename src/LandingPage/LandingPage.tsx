@@ -25,7 +25,9 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-container">
       <Background id="landing-background" className="landing-background" />
-      <div className="div1">  </div>
+      <div className="div1">  
+        <h1> GenChat </h1>
+      </div>
       <div className="div2">
         <form>
             <img src={Logo} className="landing-logo" alt='' />

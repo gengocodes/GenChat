@@ -6,7 +6,7 @@ function BackButton() {
     const navigate = useNavigate();
 
     const navHomePage = () => {
-        navigate('/HomePage');
+        navigate('/home');
     }
     
   return (

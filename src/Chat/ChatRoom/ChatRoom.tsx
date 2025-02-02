@@ -6,7 +6,7 @@ import BackButton from '../../Buttons/BackButton/BackButton';
 import { auth, firestore, firebase } from '../../FirebaseConfig';
 
 // Firestore imports
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 
 // Define message type
 interface Message {
@@ -23,33 +23,34 @@ const ChatRoom: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [formValue, setFormValue] = useState<string>('');
 
-  // Fetch messages using `getDocs()`
-  const fetchMessages = async () => {
-    try {
-      const messagesRef = collection(firestore, 'messages');
-      const messagesQuery = query(messagesRef, orderBy('createdAt'));
-      const querySnapshot = await getDocs(messagesQuery);
+  // Fetch messages in real-time
+  useEffect(() => {
+    const messagesRef = collection(firestore, 'messages');
+    const messagesQuery = query(messagesRef, orderBy('createdAt'));
 
-      const messagesList: Message[] = querySnapshot.docs.map((doc) => {
-        const data = doc.data() as Message; // Get Firestore data
-        return { ...data, id: doc.id }; // Ensure `id` is correctly set once
-      });
+    const unsubscribe = onSnapshot(messagesQuery, (querySnapshot) => {
+      const messagesList: Message[] = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      })) as Message[];
 
       setMessages(messagesList);
 
-      // Auto-scroll to the bottom when new messages are fetched
-      if (dummy.current) {
-        dummy.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    } catch (error) {
-      console.error('Error fetching messages:', error);
-    }
-  };
+      // Scroll to bottom after messages update
+      setTimeout(() => {
+        dummy.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
 
-  // Load messages on component mount
-  useEffect(() => {
-    fetchMessages();
+    return () => unsubscribe();
   }, []);
+
+  // Auto-scroll when messages update
+  useEffect(() => {
+    setTimeout(() => {
+      dummy.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }, [messages]);
 
   // Function to send a message
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -59,16 +60,15 @@ const ChatRoom: React.FC = () => {
 
     const { uid, photoURL, displayName } = user;
 
-    await firestore.collection('messages').add({
+    await addDoc(collection(firestore, 'messages'), {
       text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: serverTimestamp(),
       uid,
       photoURL: photoURL || '',
       displayName: displayName || 'Unknown User',
     });
 
     setFormValue('');
-    fetchMessages(); // Refresh messages after sending
   };
 
   return (

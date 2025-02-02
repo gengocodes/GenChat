@@ -14,7 +14,7 @@ function Profile() {
   const navigate = useNavigate();
   
   const navigateSettings = () => {
-    navigate('/Settings');
+    navigate('/settings');
   }
 
   return (

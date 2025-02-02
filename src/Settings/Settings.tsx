@@ -40,7 +40,7 @@ const Settings: React.FC = () => {
             await firestore.collection('users').doc(user.uid).update({
                 displayName: newName,  // Save the updated name in Firestore
             });
-            navigate('/Updated');
+            navigate('/updated');
             console.log("Name updated in Firestore successfully.");
         } catch (error) {
             console.error("Error updating name:", error);

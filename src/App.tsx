@@ -32,13 +32,13 @@ const App: React.FC = () => {
       <Router basename="/">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/ChatRoom" element={isAuthenticated ? <ChatRoom /> : <Navigate to="/" />} />
-          <Route path="/HomePage" element={isAuthenticated ? <HomePage /> : <Navigate to="/" />} />
-          <Route path="/PostRoom" element={isAuthenticated ? <PostRoom /> : <Navigate to="/" />} />
-          <Route path="/SignIn" element={isAuthenticated ? <SignIn /> : <Navigate to="/" />} />
-          <Route path="/Profile" element={isAuthenticated ? <Profile /> : <Navigate to="/" />} />
-          <Route path="/Settings" element={isAuthenticated ? <Settings /> : <Navigate to="/" />} />
-          <Route path="/Updated" element={isAuthenticated ? <Updated /> : <Navigate to="/" />} />
+          <Route path="/chatroom" element={isAuthenticated ? <ChatRoom /> : <Navigate to="/" />} />
+          <Route path="/home" element={isAuthenticated ? <HomePage /> : <Navigate to="/" />} />
+          <Route path="/postroom" element={isAuthenticated ? <PostRoom /> : <Navigate to="/" />} />
+          <Route path="/signin" element={isAuthenticated ? <SignIn /> : <Navigate to="/" />} />
+          <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/" />} />
+          <Route path="/settings" element={isAuthenticated ? <Settings /> : <Navigate to="/" />} />
+          <Route path="/updated" element={isAuthenticated ? <Updated /> : <Navigate to="/" />} />
         </Routes>
       </Router>
       {/* <Particles id={undefined} /> */}

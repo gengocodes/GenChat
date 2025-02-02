@@ -10,10 +10,10 @@ function HomePage() {
     const navigate = useNavigate();
 
     const navChatRoom = () => {
-        navigate('/ChatRoom');
+        navigate('/chatroom');
     }
     const navPostRoom = () => {
-        navigate('/PostRoom');
+        navigate('/postroom');
     }
 
     const user = auth.currentUser;

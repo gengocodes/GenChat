@@ -18,7 +18,7 @@ const LandingPage: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      navigate('/HomePage');
+      navigate('/home');
     }
   }, [user, navigate]);
 

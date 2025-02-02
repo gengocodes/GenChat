@@ -6,7 +6,7 @@ function Updated() {
     const navigate = useNavigate();
 
     const goBack = () => {
-        navigate('/Settings');
+        navigate('/settings');
     }
 
   return (

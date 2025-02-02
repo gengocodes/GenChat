@@ -11,7 +11,7 @@ function NavBar() {
     const navigate = useNavigate();
 
     const handleProfile = () => {
-        navigate('/Profile');
+        navigate('/profile');
     };
 
   return (

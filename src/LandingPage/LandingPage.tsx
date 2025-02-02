@@ -70,6 +70,15 @@ const LandingPage: React.FC = () => {
     return () => clearTimeout(timeout); // Cleanup timeout on unmount
   }, [displayedText, isTyping, currentTextIndex]); // Dependencies to trigger effect
 
+  const toggleFullScreen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
   return (
 
     <div className="landing-container">
@@ -84,6 +93,8 @@ const LandingPage: React.FC = () => {
       </div>
       <div className="div2">
         <form>
+          <button className="fullscreen-btn" onClick={toggleFullScreen}>Go</button>
+
             <img src={Logo} className="landing-logo" alt='' />
             <div className="input-box">
               <input type="text" id="username" placeholder="Username"  required />

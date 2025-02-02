@@ -91,7 +91,7 @@ const LandingPage: React.FC = () => {
             <div className="input-box">
                 <input type="password" id="password" placeholder="Password"  required />
             </div>
-            <input type="submit" id="Login" placeholder="" value="Log In" className="landing-submit" required />
+                <button className="submit"> Log In</button>
             <div className="links">
                 <button className="forget-pass">Forgot password?</button>
                 <button className="sign-up">Sign Up</button>

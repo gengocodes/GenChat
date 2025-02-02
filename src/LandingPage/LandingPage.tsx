@@ -29,7 +29,7 @@ const LandingPage: React.FC = () => {
         <div className="info">
         <h1> GenChat </h1>
         <h4> A Facebook web-application clone powered by 
-        <a className="gengo-bit" href="https://gengo-bit.netlify.app" target="_blank"> Gengo-bit.</a> </h4>
+        <a className="gengo-bit" href="https://gengo-bit.netlify.app" target="_blank" rel="noreferrer"> Gengo-bit.</a> </h4>
         </div>
         
       </div>

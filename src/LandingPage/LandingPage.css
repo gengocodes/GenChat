@@ -332,10 +332,10 @@ body {
   .div2 form {
     height: 100%;
     border-radius: 0px;
-    border: 0.5px solid #f8f8f8;
   }
   
   .div2 form::before {
+    border: 0.5px solid #f8f8f8;
     border-radius: 0px; /* Match the form's border radius */
   }
   .div2 form .input-box input {

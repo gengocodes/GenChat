@@ -70,15 +70,6 @@ const LandingPage: React.FC = () => {
     return () => clearTimeout(timeout); // Cleanup timeout on unmount
   }, [displayedText, isTyping, currentTextIndex]); // Dependencies to trigger effect
 
-  const toggleFullScreen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
-    }
-  };
   return (
 
     <div className="landing-container">
@@ -86,15 +77,14 @@ const LandingPage: React.FC = () => {
       <div className="div1">  
         <div className="info">
         <h1> GenChat </h1>
-        <h4> A Facebook web-application clone powered by </h4>
-        <a className="gengo-bit" href="https://gengo-bit.netlify.app" target="_blank" rel="noreferrer"> {displayedText}.</a> 
+        <h4> A Facebook web-application clone powered by
+        <a className="gengo-bit" href="https://gengo-bit.netlify.app" target="_blank" rel="noreferrer"> {displayedText}.</a>
+        </h4>
         </div>
         
       </div>
       <div className="div2">
         <form>
-          <button className="fullscreen-btn" onClick={toggleFullScreen}>Go</button>
-
             <img src={Logo} className="landing-logo" alt='' />
             <div className="input-box">
               <input type="text" id="username" placeholder="Username"  required />

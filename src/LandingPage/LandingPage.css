@@ -92,11 +92,15 @@ body {
   font-size: 2vw;
 }
 .gengo-bit{
+  font-family: "DM Serif Display", serif;
+  margin-left: 0.5vw;
+  font-size: 2vw;
   color:lightblue;
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
   display: inline-block;
+  font-weight: 1000;
 }
 .gengo-bit:hover{
   

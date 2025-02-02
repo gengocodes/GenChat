@@ -106,4 +106,5 @@ const ParticlesComponent = ({ id, className }) => {
   return <Particles id={id} className={className} init={particlesLoaded} options={options} />;
 };
 
-export default ParticlesComponent;
+export default React.memo(ParticlesComponent);
+

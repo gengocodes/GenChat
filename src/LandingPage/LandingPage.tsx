@@ -26,7 +26,12 @@ const LandingPage: React.FC = () => {
     <div className="landing-container">
       <Background id="landing-background" className="landing-background" />
       <div className="div1">  
+        <div className="info">
         <h1> GenChat </h1>
+        <h4> A Facebook web-application clone powered by 
+        <a className="gengo-bit" href="https://gengo-bit.netlify.app" target="_blank"> Gengo-bit.</a> </h4>
+        </div>
+        
       </div>
       <div className="div2">
         <form>

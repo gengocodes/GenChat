@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap');
-/* Roboto, Lato, Poppins, Exo 2, Raleway */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lilita+One&display=swap');
+
+/* Roboto, Lato, Poppins, Exo 2, Raleway, DM Serif Display */
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +25,8 @@ body {
 .landing-container {
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: 0.2fr 3fr 2fr 0.2fr;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-columns: 0.2fr 3fr 2fr 0.2fr; /* columns */
+    grid-template-rows: 1fr 10fr 1fr; /* rows */
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     height: 100vh;
@@ -45,18 +47,74 @@ body {
   height: 100%;
   width: 100%;
   z-index: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.div1 .info{
+  margin-left: 10%;
+  margin-top: -30%;
+}
+.div1 h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 6vw;
+  background: linear-gradient(
+    to right,
+    rgb(163, 253, 255) 0%,
+    rgb(0, 9, 50) 100%,
+    rgb(255,255,255) 100%
+  );
+  background-size: 300% 100%;
+  margin-bottom: 0.5vh;
+  
+  /* Apply gradient to text */
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  -webkit-text-fill-color: transparent; /* For WebKit browsers */
+
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), /* Inner */
+               -3px -3px 5px rgba(255, 255, 255, 0.2); /* Outer */
+  transition: background-position 1s ease-in-out, 
+              transform 0.3s ease-in-out, 
+              text-shadow 0.3s ease-in-out;
 }
 
+.div1 h1:hover {
+  background-position: -100% 0;
+
+  transform: scale(1.08);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), /* Inner */
+  -3px -3px 5px rgba(255, 255, 255, 0.2); /* Outer */
+}
+.div1 h4{
+  font-family: "DM Serif Display", serif;
+  margin-left: 0.5vw;
+  font-size: 2vw;
+}
+.gengo-bit{
+  color:lightblue;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+.gengo-bit:hover{
+  
+  transform: scale(1.05);
+}
 .div2 {
   grid-area: 2 / 3 / 3 / 4; 
+  flex-direction: column;
   z-index: 1;
   height: 100%;
   width: 100%;
-  position: relative;
+  display: flex;
   backdrop-filter: blur(5px); /* Glass effect */
   -webkit-backdrop-filter: blur(5px);
   border-radius: 20px;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .div2::before {
@@ -192,6 +250,7 @@ body {
 .signin-button:hover{
   background: transparent;
 }
+
 
 @media (max-width:480px) and (max-width:760px){
 

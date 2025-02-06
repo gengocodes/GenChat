@@ -41,9 +41,6 @@ const ChatRoom: React.FC = () => {
       })) as Message[];
 
       setMessages(messagesList);
-      setTimeout(() => {
-        dummy.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
     });
 
     return () => unsubscribe();
@@ -84,7 +81,27 @@ const ChatRoom: React.FC = () => {
       fileInputRef.current.value = "";
     }
   };
+    // Ensure scrolling happens only after everything loads (including images)
+    useEffect(() => {
+      if (messages.length === 0) return;
 
+      const imagePromises = messages
+        .filter((msg) => msg.imageUrl)
+        .map((msg) => {
+          return new Promise<void>((resolve) => {
+            const img = new Image();
+            img.src = msg.imageUrl!;
+            img.onload = () => resolve();
+            img.onerror = () => resolve(); // Resolve even if the image fails
+          });
+        });
+
+      Promise.all(imagePromises).then(() => {
+        setTimeout(() => {
+          dummy.current?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      });
+    }, [messages]);
   return (
     <>
       <header className="chatroom-header">

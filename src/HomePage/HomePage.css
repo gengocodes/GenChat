@@ -13,6 +13,81 @@ body {
     justify-content: center;
     align-items: center;
 }
+.home-background{
+    position: absolute;
+    z-index: 0;
+}
+header {
+    margin: 0;
+    height: 8vh;
+    width: 100vw;
+    top: 0;
+    position: absolute;
+    background: radial-gradient(circle, rgb(0, 9, 50) 30%, rgba(0, 9, 114, 0.8) 60%, rgba(0, 0, 0, 0.7) 100%);    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+header .user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 4vh;
+    position: absolute;
+    right: 0;
+    justify-content: flex-end;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+header .user-info:hover {
+    opacity: 0.8;
+    animation: pulse 1s ease infinite;
+    cursor: pointer;
+}
+
+header .user-name{
+    z-index: 1;
+    padding-left: 5px;
+    color: white;
+    font-size: 1.5vh;
+}
+header .homeimg{
+    z-index: 1;
+    height: 3vh;
+    width: 3vh;
+    border: white;
+    border-style: inset;
+}
+header .branding-left{
+    display: flex;
+    align-items: center;
+    margin-left: 4vh;
+    position: absolute;
+    left: 0;
+    justify-content: flex-start;
+}
+header .genchat{
+    z-index: 1;
+    color: white;
+    font-size: 2vh;
+}
+header .logo{
+    z-index: 1;
+    height: 3vh;
+    width: 3vh;
+}
+
 
 /* Main homepage container */
 .homepage-container {
@@ -21,62 +96,38 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: rgb(43, 43, 41);
-    text-align: center;
+    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    text-align: center;
     padding: 20px;
 }
 
 /* Content card styling */
 .homepage-content {
-    max-width: 600px;
-    width: 90%;
-    background: #2b3444;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    position: absolute;
+    height: 92vh;
+    width: 100vw;
+    z-index: 1;
 }
 
-/* Title styling */
-.homepage-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #f4c542;
-    margin-bottom: 10px;
-}
-
-/* Subtitle styling */
-.homepage-subtitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-}
-
-/* Button styling */
 .chat-button {
-    color: #1b1f27;
-    background: #f4c542;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: white;
+    background: none;
+    height: 92vh;
+    border-radius: none;
+    left: 0;
+    position: absolute;
+    width: 50vw;
+    z-index: 10;
 }
 .post-button {
-    margin: 10px;
-    color: #1b1f27;
-    background: #f4c542;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: white;
+    background: none;
+    height: 92vh;
+    border-radius: none;
+    right: 0;
+    position: absolute;
+    width: 50vw;
+    z-index: 10;
 }
 .homepage-button:hover {
     background: #ffd75e;
@@ -88,6 +139,13 @@ body {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Dropdown arrow styling */
+.dropdown-arrow {
+    font-size: 1.2rem; /* Size of the arrow */
+    color: white;
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
 .signout-button {
     color: #1b1f27;
     background: #f4c542;

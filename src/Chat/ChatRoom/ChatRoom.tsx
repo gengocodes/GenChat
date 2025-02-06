@@ -5,13 +5,14 @@ import SignOut from '../../Auth/SignOut/SignOut';
 import BackButton from '../../Buttons/BackButton/BackButton';
 import { auth, firestore, firebase } from '../../FirebaseConfig';
 
-// Firestore imports
+// Firestore and Storage imports
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 
 // Define message type
 interface Message {
   id: string;
-  text: string;
+  text?: string;
+  imageUrl?: string;
   uid: string;
   photoURL: string;
   displayName?: string;
@@ -22,6 +23,7 @@ const ChatRoom: React.FC = () => {
   const dummy = useRef<HTMLDivElement | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [formValue, setFormValue] = useState<string>('');
+  const [image, setImage] = useState<File | null>(null);
 
   // Fetch messages in real-time
   useEffect(() => {
@@ -52,30 +54,56 @@ const ChatRoom: React.FC = () => {
     }, 100);
   }, [messages]);
 
-  // Function to send a message
+  // Function to send a message with optional image
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = auth.currentUser;
     if (!user) return;
 
     const { uid, photoURL, displayName } = user;
+    let imageBase64 = '';
 
-    await addDoc(collection(firestore, 'messages'), {
-      text: formValue,
-      createdAt: serverTimestamp(),
-      uid,
-      photoURL: photoURL || '',
-      displayName: displayName || 'Unknown User',
-    });
+    // If an image is selected, convert it to Base64
+    if (image) {
+        const reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.onload = async () => {
+            imageBase64 = reader.result as string;
 
-    setFormValue('');
-  };
+            // Store the message in Firestore
+            await addDoc(collection(firestore, 'messages'), {
+                text: formValue || '', // Include text if provided
+                imageUrl: imageBase64, // Store image as Base64
+                createdAt: serverTimestamp(),
+                uid,
+                photoURL: photoURL || '',
+                displayName: displayName || 'Unknown User',
+            });
+
+            setFormValue('');
+            setImage(null);
+        };
+    } else {
+        // Store only text message
+        await addDoc(collection(firestore, 'messages'), {
+            text: formValue || '',
+            imageUrl: '',
+            createdAt: serverTimestamp(),
+            uid,
+            photoURL: photoURL || '',
+            displayName: displayName || 'Unknown User',
+        });
+
+        setFormValue('');
+        setImage(null);
+    }
+};
 
   return (
     <>
       <header className="chatroom-header">
         <BackButton />
-        <SignOut className=''/>
+        <SignOut className='' />
       </header>
       <main>
         {messages.map((msg) => (
@@ -91,7 +119,12 @@ const ChatRoom: React.FC = () => {
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Type a message"
           />
-          <button type="submit">X</button>
+          <input 
+            type="file" 
+            accept="image/*" 
+            onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
+          />
+          <button type="submit">Send</button>
         </form>
       )}
     </>

@@ -57,6 +57,38 @@ p:hover + .timedate .time {
 p:hover + .timedate .date {
     display: block;
 }
+/* Chat image (small preview) */
+.chat-image {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.chat-image:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+    border-radius: 0;
+}
 
 @media (max-width: 768px) {
     p {

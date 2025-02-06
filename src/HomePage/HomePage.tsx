@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './HomePage.css';
 import logo from '../assets/GenChat.png';
 import messageicon from '../assets/message-icon.svg';

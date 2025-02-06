@@ -3,20 +3,21 @@ import './ChatRoom.css';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import SignOut from '../../Auth/SignOut/SignOut';
 import BackButton from '../../Buttons/BackButton/BackButton';
-import { auth, firestore, firebase } from '../../FirebaseConfig';
+import { auth, firestore, storage } from '../../FirebaseConfig';
 
-// Firestore and Storage imports
+// Firestore imports
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 // Define message type
 interface Message {
   id: string;
-  text?: string;
-  imageUrl?: string;
+  text: string;
   uid: string;
   photoURL: string;
   displayName?: string;
-  createdAt?: firebase.firestore.Timestamp | null;
+  createdAt?: any;
+  imageUrl?: string;
 }
 
 const ChatRoom: React.FC = () => {
@@ -24,6 +25,9 @@ const ChatRoom: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [formValue, setFormValue] = useState<string>('');
   const [image, setImage] = useState<File | null>(null);
+
+  // Create a ref for the file input field to reset it after sending a message
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Fetch messages in real-time
   useEffect(() => {
@@ -37,8 +41,6 @@ const ChatRoom: React.FC = () => {
       })) as Message[];
 
       setMessages(messagesList);
-
-      // Scroll to bottom after messages update
       setTimeout(() => {
         dummy.current?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
@@ -47,57 +49,41 @@ const ChatRoom: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
-  // Auto-scroll when messages update
-  useEffect(() => {
-    setTimeout(() => {
-      dummy.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, [messages]);
-
-  // Function to send a message with optional image
+  // Function to handle image upload and message sending
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent page reload
     const user = auth.currentUser;
     if (!user) return;
 
     const { uid, photoURL, displayName } = user;
-    let imageBase64 = '';
+    let imageUrl = '';
 
-    // If an image is selected, convert it to Base64
+    // Upload image if selected
     if (image) {
-        const reader = new FileReader();
-        reader.readAsDataURL(image);
-        reader.onload = async () => {
-            imageBase64 = reader.result as string;
-
-            // Store the message in Firestore
-            await addDoc(collection(firestore, 'messages'), {
-                text: formValue || '', // Include text if provided
-                imageUrl: imageBase64, // Store image as Base64
-                createdAt: serverTimestamp(),
-                uid,
-                photoURL: photoURL || '',
-                displayName: displayName || 'Unknown User',
-            });
-
-            setFormValue('');
-            setImage(null);
-        };
-    } else {
-        // Store only text message
-        await addDoc(collection(firestore, 'messages'), {
-            text: formValue || '',
-            imageUrl: '',
-            createdAt: serverTimestamp(),
-            uid,
-            photoURL: photoURL || '',
-            displayName: displayName || 'Unknown User',
-        });
-
-        setFormValue('');
-        setImage(null);
+      const imageRef = ref(storage, `chat_images/${image.name}-${Date.now()}`);
+      const snapshot = await uploadBytes(imageRef, image);
+      imageUrl = await getDownloadURL(snapshot.ref);
     }
-};
+
+    // Store message in Firestore
+    await addDoc(collection(firestore, 'messages'), {
+      text: formValue || null,
+      imageUrl: imageUrl || null,
+      createdAt: serverTimestamp(),
+      uid,
+      photoURL: photoURL || '',
+      displayName: displayName || 'Unknown User',
+    });
+
+    // Reset text input and image selection
+    setFormValue('');
+    setImage(null);
+
+    // Reset the file input field to clear the selected file name
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   return (
     <>
@@ -119,9 +105,11 @@ const ChatRoom: React.FC = () => {
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Type a message"
           />
-          <input 
-            type="file" 
-            accept="image/*" 
+          {/* File input field with ref to reset after sending */}
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef} // Attach ref to input field
             onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
           />
           <button type="submit">Send</button>

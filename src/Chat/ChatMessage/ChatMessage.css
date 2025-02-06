@@ -59,7 +59,7 @@ p:hover + .timedate .date {
 }
 /* Chat image (small preview) */
 .chat-image {
-    width: 150px;
+    width: 30vw;
     height: auto;
     cursor: pointer;
     border-radius: 8px;

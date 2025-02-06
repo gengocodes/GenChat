@@ -35,21 +35,21 @@ const  ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
     <div className={`message ${messageClass}`}>
         <img src={photoURL} alt="User Avatar" />
         {text && <p>{text}</p>}
-            {imageUrl && (
-                <>
-                    <img
-                        src={imageUrl}
-                        alt="Uploaded"
-                        className="chat-image"
-                        onClick={() => setModalOpen(true)} // Open modal on click
-                    />
-                    {modalOpen && (
-                        <div className="modal" onClick={() => setModalOpen(false)}>
-                            <img src={imageUrl} alt="" className="modal-content" />
-                        </div>
-                    )}
-                </>
-            )}
+        {imageUrl && (
+            <>
+                <img
+                    src={imageUrl} // Now uses Firebase Storage URL
+                    alt="Uploaded"
+                    className="chat-image"
+                    onClick={() => setModalOpen(true)}
+                />
+                {modalOpen && (
+                    <div className="modal" onClick={() => setModalOpen(false)}>
+                        <img src={imageUrl} alt="Full Size" className="modal-content" />
+                    </div>
+                )}
+            </>
+        )}
         <div className="timedate">
             <span className="time">{formattedTime}</span>
             <span className="date">Sent at {formattedDate}.</span>

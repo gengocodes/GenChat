@@ -7,6 +7,7 @@ import messageicon from '../assets/message-icon.svg';
 import posticon from '../assets/post-icon.png';
 import homeicon from '../assets/home-icon.png';
 import logouticon from '../assets/logout-icon.png';
+import greatericon from '../assets/greater-icon.png';
 
 import { auth, firestore, storage } from '../FirebaseConfig'; // Ensure storage is imported
 import { useNavigate } from 'react-router-dom';
@@ -91,15 +92,22 @@ const Settings: React.FC = () => {
       navigate('/'); // Redirect to LandingPage
     };
   
+    const [isUsernameVisible, setIsUsernameVisible] = useState(false);
+    const [isProfilePicVisible, setIsProfilePicVisible] = useState(false);
+
+    const toggleUsername = () => {
+      setIsUsernameVisible(!isUsernameVisible);
+    };
+    const toggleProfilePic = () => {
+      setIsProfilePicVisible(!isProfilePicVisible);
+    };
+
     return (
       <div className='settings'>
         <header>
           <div className='settings-user-info'>
             <img src={newPhotoURL || photoURL} className='homeimg' alt="" />
             <div className='settings-user-name'>{displayName}</div>
-          </div>
-          <div className='branding-center'>
-            Settings
           </div>
           <div className='branding-left'>
             <img src={logo} className='logo' alt="" />
@@ -126,38 +134,95 @@ const Settings: React.FC = () => {
         </nav>
 
         <div className='settingsarea'>
-          
+          <div className='settings-selection'>
+            <div className='settings-cont' onClick={toggleUsername}> 
+              <h1 className='your-account'> Username </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont' onClick={toggleProfilePic}> 
+              <h1 className='your-account'> Profile Picture </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Email </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Password </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Username </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Profile Picture </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Email </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+            <div className='settings-cont'> 
+              <h1 className='your-account'> Password </h1>
+              <img src={greatericon} alt="" className='greater-icon' />
+            </div>
+          </div>
         </div>
 
-        <form className='settings-forms' onSubmit={handleSubmit}>
-          <label htmlFor="firstName">First Name:</label>
-          <TextInput
-            type='text'
-            id="firstName"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <label htmlFor="lastName">Last Name:</label>
-          <TextInput
-            type='text'
-            id="lastName"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <label htmlFor="photo">Profile Photo:</label>
-          <input
-            type="file"
-            id="photo"
-            onChange={handlePhotoChange}
-          />
-          <input type="submit" value="Submit" className='settings-submit' />
-        </form>
+              {isUsernameVisible && (
+                <form className='settings-forms' onSubmit={handleSubmit}>
+                    <label htmlFor="firstName">First Name:</label>
+                    <TextInput
+                        type='text'
+                        id="firstName"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <label htmlFor="lastName">Last Name:</label>
+                    <TextInput
+                        type='text'
+                        id="lastName"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                    <input type="submit" value="Submit" className='settings-submit' />
+                </form>
+            )}
+
+              {isProfilePicVisible && (
+                <form className='settings-forms' onSubmit={handleSubmit}>
+                    <label htmlFor="firstName">First Name:</label>
+                    <TextInput
+                        type='text'
+                        id="firstName"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <label htmlFor="lastName">Last Name:</label>
+                    <TextInput
+                        type='text'
+                        id="lastName"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                    <label htmlFor="photo">Profile Photo:</label>
+                    <input
+                        type="file"
+                        id="photo"
+                        onChange={handlePhotoChange}
+                    />
+                    <input type="submit" value="Submit" className='settings-submit' />
+                </form>
+            )}
   
-        {displayName ? 
+        {/* {displayName ? 
         <div className='settings-greet'>Hello, {displayName}</div>
-         : "No name!"}
+         : "No name!"} */}
       </div>
     );
   };

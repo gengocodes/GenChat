@@ -1,32 +1,58 @@
 .settings{
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100vw;
     background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    text-align: center;
     z-index: 0;
 }
 .settingsarea{
-    height: 92vh;
-    width: 96vw;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border: 1px solid;
+    margin-top: 8vh;
+    position: static;
     z-index: 0;
 }
-
+.settings-selection{
+    margin-left: 7vh;
+    height: 92vh;
+    width: 40vw;
+    position: static;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.settings-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.settings-cont:hover{
+    border: 1px solid;
+}
+.settings-cont h1{
+    margin-left: 3vh;
+    margin-top: 3vh;
+    font-size: 2vh;
+    cursor: pointer;
+}
+.greater-icon{
+    margin-top: 3vh;
+    margin-right: 2vh;
+    height: 2vh;
+    width: 2vh;
+}
 .settings-forms{
+    margin-top: 8vh;
     bottom: 0;
     right: 0;
     left: auto;
-    position: absolute;
+    position: static;
     background: transparent;
     border: none;
-    height: 92vh;
     width: 90vw;
-    z-index: 1;
+    z-index: 0;
     box-shadow: none;
     display: flex;
     flex-wrap: wrap;
@@ -95,7 +121,8 @@ header .logo{
 }
 
 .navSettings{
-    position: fixed;
+    position: absolute;
+    margin-top: 8vh;
     height: 92vh;
     width: 7vh;
     z-index: 2;

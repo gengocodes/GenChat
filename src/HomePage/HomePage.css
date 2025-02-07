@@ -92,7 +92,7 @@ header .logo{
 .navHome{
     position: fixed;
     height: 92vh;
-    width: 4vw;
+    width: 7vh;
     z-index: 2;
     bottom: 0;
     left: 0;
@@ -102,56 +102,35 @@ header .logo{
     padding-top: 2vh;
 }
 .navHome:hover{
-    width: 10vw;
+    width: 15vh;
 }
-.navHome .post-icon{
+.navHome .settings-icon, .logout-icon, .chat-icon, .post-icon{
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
+    margin-left: 2vh;
     border-radius: 0px;
     color: white;
-    height: 2vw;
-    width: 2vw;
-}
-
-.navHome .chat-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
-}
-.navHome .settings-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
-}
-.navHome .logout-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
+    height: 3vh;
+    width: 3vh;
 }
 .nav-text {
     display: none;
-    font-size: 1vw;
+    font-size: 1.5vh;
     color: white;
     text-align: center;
-    margin-top: -1vw;
+    position: relative;
+    margin-left: -1.5vh;
 }
-
-.settings-icon-cont:hover .nav-text,
-.post-icon-cont:hover .nav-text,
-.chat-icon-cont:hover .nav-text,
-.logout-icon-cont:hover .nav-text {
+.settings-icon-cont, 
+.post-icon-cont, 
+.chat-icon-cont, 
+.logout-icon-cont {
+    display: flex;
+    align-items: center;
+}
+.navHome:hover .nav-text{
     display: block;
 }
-
 .navHome .chat-icon-cont:hover, .post-icon-cont:hover, 
 .settings-icon-cont:hover, .logout-icon-cont:hover {
     border: solid 0.5px;

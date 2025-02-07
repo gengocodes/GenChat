@@ -98,6 +98,9 @@ const Settings: React.FC = () => {
             <img src={newPhotoURL || photoURL} className='homeimg' alt="" />
             <div className='settings-user-name'>{displayName}</div>
           </div>
+          <div className='branding-center'>
+            Settings
+          </div>
           <div className='branding-left'>
             <img src={logo} className='logo' alt="" />
             <div className='genchat'>enChat</div>
@@ -106,7 +109,7 @@ const Settings: React.FC = () => {
         <nav className='navSettings'>
           <div className='settings-home-icon-cont' onClick={navHome}>
             <img src={homeicon} alt='' className='settings-home-icon' />
-            <p className='settings-nav-text'>Settings</p>
+            <p className='settings-nav-text'>Home</p>
           </div>
           <div className='settings-post-icon-cont' onClick={navPostRoom}>
             <img src={posticon} alt="" className='settings-post-icon' />
@@ -121,7 +124,11 @@ const Settings: React.FC = () => {
             <p className='settings-nav-text'>Logout</p>
           </div>
         </nav>
-  
+
+        <div className='settingsarea'>
+          
+        </div>
+
         <form className='settings-forms' onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name:</label>
           <TextInput
@@ -148,7 +155,9 @@ const Settings: React.FC = () => {
           <input type="submit" value="Submit" className='settings-submit' />
         </form>
   
-        {displayName ? <div>Hello, {displayName}</div> : "No name!"}
+        {displayName ? 
+        <div className='settings-greet'>Hello, {displayName}</div>
+         : "No name!"}
       </div>
     );
   };

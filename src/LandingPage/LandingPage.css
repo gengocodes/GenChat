@@ -33,10 +33,7 @@ body {
     height: 100vh;
     width: 100vw;
     z-index: 0;
-    background-image: url('./landingpage-background4.png'); /* Correct background image syntax */
-    background-size: cover; /* Ensures the image covers the entire div2 */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);
 }
 .landing-logo{
   height: 10vh;
@@ -62,7 +59,7 @@ body {
   font-size: 6vw;
   background: linear-gradient(
     to right,
-    rgb(163, 253, 255) 0%,
+    rgb(188, 254, 255) 0%,
     rgb(0, 9, 50) 100%,
     rgb(255,255,255) 100%
   );
@@ -145,7 +142,7 @@ body {
   bottom: 0;
   border: 1px solid #f8f8f8;
   border-radius: 5px;
-  background: radial-gradient(circle, rgb(0, 9, 50) 0%, rgba(0, 9, 114, 0.5) 40%, transparent 100%);
+  background: radial-gradient(circle, rgb(0, 9, 50) 0%, rgba(0, 9, 114, 1) 60%, transparent 100%);
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
   border-radius: 20px; /* Match the form's border radius */

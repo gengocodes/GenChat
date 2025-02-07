@@ -7,6 +7,16 @@
     background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    text-align: center;
     z-index: 0;
 }
+.settingsarea{
+    height: 92vh;
+    width: 96vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid;
+    z-index: 0;
+}
+
 .settings-forms{
     bottom: 0;
     right: 0;
@@ -18,39 +28,24 @@
     width: 90vw;
     z-index: 1;
     box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 input {
     display: flex;
-    margin: 10px;
+    flex-wrap: wrap;
+    width: 10rem;
 }
 .settings-submit{
     cursor:pointer;
 }
-
-header {
-    height: 8vh;
-    width: 100vw;
+.settings-greet{
+    font-size: 10vh;
+    font-weight: 600;
+    position: absolute;
     top: 0;
-    position: fixed;
-    background: radial-gradient(circle, rgb(0, 9, 50) 30%, rgba(0, 9, 114, 0.8) 60%, rgba(0, 0, 0, 0.7) 100%);    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
+    margin-top: 10vh;
 }
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 header .settings-user-info {
     display: flex;
     align-items: center;
@@ -61,7 +56,7 @@ header .settings-user-info {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-header .settings-user-info:hover, .branding-left:hover {
+header .settings-user-info:hover {
     opacity: 0.8;
     animation: pulse 1s ease infinite;
     cursor: pointer;
@@ -87,7 +82,6 @@ header .branding-left{
     position: absolute;
     left: 0;
     justify-content: flex-start;
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 header .genchat{
     z-index: 1;
@@ -103,7 +97,7 @@ header .logo{
 .navSettings{
     position: fixed;
     height: 92vh;
-    width: 4vw;
+    width: 7vh;
     z-index: 2;
     bottom: 0;
     left: 0;
@@ -113,64 +107,35 @@ header .logo{
     padding-top: 2vh;
 }
 .navSettings:hover{
-    width: 10vw;
+    width: 15vh;
 }
-.navSettings .settings-home-icon{
+.navSettings .settings-home-icon, .settings-logout-icon, .settings-chat-icon, .settings-post-icon{
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
+    margin-left: 2vh;
     border-radius: 0px;
     color: white;
-    height: 2vw;
-    width: 2vw;
-}
-.navSettings .settings-post-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
-}
-
-.navSettings .settings-chat-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
-}
-.navSettings .settings-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
-}
-.navSettings .settings-logout-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    border-radius: 0px;
-    color: white;
-    height: 2vw;
-    width: 2vw;
+    height: 3vh;
+    width: 3vh;
 }
 .settings-nav-text {
     display: none;
-    font-size: 1vw;
+    font-size: 1.5vh;
     color: white;
     text-align: center;
-    margin-top: -1vw;
+    position: relative;
+    margin-left: -1.5vh;
 }
-
-.settings-home-icon-cont:hover .settings-nav-text,
-.settings-post-icon-cont:hover .settings-nav-text,
-.settings-chat-icon-cont:hover .settings-nav-text,
-.settings-logout-icon-cont:hover .settings-nav-text {
+.settings-home-icon-cont, 
+.settings-post-icon-cont, 
+.settings-chat-icon-cont, 
+.settings-logout-icon-cont {
+    display: flex;
+    align-items: center;
+}
+.navSettings:hover .settings-nav-text{
     display: block;
 }
-
 .navSettings .settings-chat-icon-cont:hover, .settings-post-icon-cont:hover, 
 .settings-home-icon-cont:hover, .settings-logout-icon-cont:hover {
     border: solid 0.5px;

@@ -138,18 +138,11 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-.settings-greet{
-    font-size: 10vh;
-    font-weight: 600;
-    position: absolute;
-    top: 0;
-    margin-top: 10vh;
-}
 header .settings-user-info {
     display: flex;
     align-items: center;
     margin-right: 4vh;
-    position: absolute;
+    position: fixed;
     right: 0;
     justify-content: flex-end;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -178,7 +171,7 @@ header .branding-left{
     display: flex;
     align-items: center;
     margin-left: 4vh;
-    position: absolute;
+    position: fixed;
     left: 0;
     justify-content: flex-start;
 }
@@ -194,8 +187,7 @@ header .logo{
 }
 
 .navSettings{
-    position: absolute;
-    margin-top: 8vh;
+    position: fixed;
     height: 92vh;
     width: 7vh;
     z-index: 2;

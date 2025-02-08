@@ -14,7 +14,7 @@ body {
     align-items: center;
 }
 .home-background{
-    position: absolute;
+    position: fixed;
     z-index: 0;
 }
 header {
@@ -45,7 +45,7 @@ header .user-info {
     display: flex;
     align-items: center;
     margin-right: 4vh;
-    position: absolute;
+    position: fixed;
     right: 0;
     justify-content: flex-end;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -74,7 +74,7 @@ header .branding-left{
     display: flex;
     align-items: center;
     margin-left: 4vh;
-    position: absolute;
+    position: fixed;
     left: 0;
     justify-content: flex-start;
 }
@@ -151,7 +151,7 @@ header .logo{
 /* Content card styling */
 .homepage-content {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     height: 92vh;
     width: 100vw;
     z-index: 1;
@@ -163,7 +163,7 @@ header .logo{
     height: 92vh;
     border-radius: none;
     left: 0;
-    position: absolute;
+    position: fixed;
     margin-left: 4vw;
     width: 48vw;
     z-index: 10;
@@ -174,7 +174,7 @@ header .logo{
     height: 92vh;
     border-radius: none;
     right: 0;
-    position: absolute;
+    position: fixed;
     width: 48vw;
     z-index: 10;
 }

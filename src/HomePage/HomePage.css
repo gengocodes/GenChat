@@ -93,7 +93,8 @@ header .logo{
 
 .navHome{
     position: fixed;
-    height: 92vh;
+    margin-top: 8vh;
+    height: calc(100vh - 8vh);
     width: 7vh;
     z-index: 2;
     bottom: 0;

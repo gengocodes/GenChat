@@ -12,8 +12,8 @@
 }
 .settings-selection{
     margin-left: 7vh;
-    width: calc(40vw - 7vh);
-    height: calc(100vh - 8vh);
+    height: 92vh;
+    width: 40vw;
     position: static;
     bottom: 0;
     left: 0;
@@ -188,7 +188,8 @@ header .logo{
 
 .navSettings{
     position: fixed;
-    height: 92vh;
+    margin-top: 8vh;
+    height: calc(100vh - 8vh);
     width: 7vh;
     z-index: 2;
     bottom: 0;

@@ -22,13 +22,20 @@ body {
     bottom: 0;
     left: 0;
     background: transparent;
-    padding-top: 2vh;
     backdrop-filter: blur(10px);
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
     transition: width 0.3s ease-in-out;
 }
 .navHome:hover{
     width: 20vh;
+}
+.logo-cont{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.home-user-cont{
+    margin-top: 1.5vh;
 }
 .homeimg{
     margin-top: 1.5vh;
@@ -71,7 +78,7 @@ body {
     display: inline;
 }
 .logo-cont,
-.user-cont,
+.home-user-cont,
 .settings-icon-cont, 
 .post-icon-cont, 
 .chat-icon-cont, 
@@ -83,11 +90,10 @@ body {
     opacity: 1;
     visibility: visible;
 }
-.navHome .logo-cont:hover, .user-cont:hover, .chat-icon-cont:hover, .post-icon-cont:hover, 
+.navHome .logo-cont:hover, .home-user-cont:hover, .chat-icon-cont:hover, .post-icon-cont:hover, 
 .settings-icon-cont:hover, .logout-icon-cont:hover {
-    border: solid 0.5px;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
     color: yellow;
     transition:  ease-in-out 0.1s; 
 }

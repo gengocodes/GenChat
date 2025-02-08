@@ -45,7 +45,7 @@ function HomePage() {
                     <img src={logo} className='logo' alt="" />
                     <p className='home-genchat'>Creator</p>
                 </div>
-                <div className='user-cont'>
+                <div className='home-user-cont'>
                     <img src={photoURL} className='homeimg' alt="" />
                     <p className='home-user-name'>{displayName}</p>
                 </div>

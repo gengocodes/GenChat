@@ -32,20 +32,23 @@ function HomePage() {
     const photoURL = user?.photoURL || '';
     const displayName = user?.displayName || '';
 
+    const goToCreator = () => {
+        window.open("https://gengo-bit.netlify.app", "_blank");
+    };    
+
     return (
         <div className="homepage-container">
             <HomeBackground id={undefined} className='home-background' />
-            <header>
-                <div className='user-info'>
-                    <img src={photoURL} className='homeimg' alt="" />
-                    <div className='user-name'>{displayName}</div>
-                </div>
-                <div className='branding-left'> 
-                    <img src={logo} className='logo' alt="" />
-                    <div className='genchat'>enChat</div>
-                </div>
-            </header>
+
             <nav className='navHome'>
+                <div className='logo-cont' onClick={goToCreator}>
+                    <img src={logo} className='logo' alt="" />
+                    <p className='genchat'>Creator</p>
+                </div>
+                <div className='user-cont'>
+                    <img src={photoURL} className='homeimg' alt="" />
+                    <p className='user-name'>{displayName}</p>
+                </div>
                 <div className='settings-icon-cont' onClick={navSettings}>
                     <img src={settingsicon} alt='' className='settings-icon' />
                     <p className='nav-text'>Settings</p>

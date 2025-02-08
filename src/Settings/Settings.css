@@ -6,13 +6,12 @@
     z-index: 0;
 }
 .settingsarea{
-    margin-top: 8vh;
     position: static;
     z-index: 0;
 }
 .settings-selection{
-    margin-left: 7vh;
-    height: 92vh;
+    margin-left: 9vh;
+    height: 100vh;
     width: 40vw;
     position: static;
     bottom: 0;
@@ -138,80 +137,40 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-header .settings-user-info {
-    display: flex;
-    align-items: center;
-    margin-right: 4vh;
-    position: fixed;
-    right: 0;
-    justify-content: flex-end;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-header .settings-user-info:hover {
-    opacity: 0.8;
-    animation: pulse 1s ease infinite;
-    cursor: pointer;
-}
-
-header .settings-user-name{
-    z-index: 1;
-    padding-left: 5px;
-    color: white;
-    font-size: 1.5vh;
-}
-header .homeimg{
-    z-index: 1;
-    height: 3vh;
-    width: 3vh;
-    border: white;
-    border-style: inset;
-}
-header .branding-left{
-    display: flex;
-    align-items: center;
-    margin-left: 4vh;
-    position: fixed;
-    left: 0;
-    justify-content: flex-start;
-}
-header .genchat{
-    z-index: 1;
-    color: white;
-    font-size: 2vh;
-}
-header .logo{
-    z-index: 1;
-    height: 3vh;
-    width: 3vh;
-}
 
 .navSettings{
     position: fixed;
-    margin-top: 8vh;
-    height: calc(100vh - 8vh);
-    width: 7vh;
+    height: 100vh;
+    width: 9vh;
     z-index: 2;
     bottom: 0;
     left: 0;
     background: transparent;
     backdrop-filter: blur(10px);
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-    padding-top: 2vh;
+    padding-top: 3vh;
 }
 .navSettings:hover{
-    width: 15vh;
+    width: 20vh;
 }
-.navSettings .settings-home-icon, .settings-logout-icon, .settings-chat-icon, .settings-post-icon{
+.homeimg{
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
-    margin-left: 2vh;
+    margin-left: 3vh;
+    height: 3vh;
+    width: 3vh;
+}
+.navSettings .logo, .settings-home-icon, .settings-logout-icon, .settings-chat-icon, .settings-post-icon{
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    margin-left: 3vh;
     border-radius: 0px;
+    bottom: 0;
     color: white;
     height: 3vh;
     width: 3vh;
 }
-.settings-nav-text {
+.settings-nav-text, .genchat, .user-name {
     display: none;
     font-size: 1.5vh;
     color: white;
@@ -226,10 +185,10 @@ header .logo{
     display: flex;
     align-items: center;
 }
-.navSettings:hover .settings-nav-text{
+.navSettings:hover .settings-nav-text, .navSettings:hover .genchat, .navSettings:hover .user-name{
     display: block;
 }
-.navSettings .settings-chat-icon-cont:hover, .settings-post-icon-cont:hover, 
+.navSettings .logo-cont:hover, .user-cont:hover, .settings-chat-icon-cont:hover, .settings-post-icon-cont:hover, 
 .settings-home-icon-cont:hover, .settings-logout-icon-cont:hover {
     border: solid 0.5px;
     cursor: pointer;

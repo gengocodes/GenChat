@@ -111,21 +111,22 @@ const Settings: React.FC = () => {
     const toggleSection = (section: string) => {
       setVisibleSection((prevSection) => (prevSection === section ? null : section));
     };
+    const goToCreator = () => {
+      window.open("https://gengo-bit.netlify.app", "_blank");
+    };    
 
     
     return (
       <div className='settings'>
-        <header>
-          <div className='settings-user-info'>
-            <img src={newPhotoURL || photoURL} className='homeimg' alt="" />
-            <div className='settings-user-name'>{displayName}</div>
-          </div>
-          <div className='branding-left'>
-            <img src={logo} className='logo' alt="" />
-            <div className='genchat'>enChat</div>
-          </div>
-        </header>
         <nav className='navSettings'>
+          <div className='logo-cont' onClick={goToCreator}>
+          <img src={logo} className='logo' alt="" />
+            <p className='genchat'>Creator</p>
+          </div>
+          <div className='user-cont'>
+            <img src={photoURL} className='homeimg' alt="" />
+            <p className='user-name'>{displayName}</p>
+          </div>
           <div className='settings-home-icon-cont' onClick={navHome}>
             <img src={homeicon} alt='' className='settings-home-icon' />
             <p className='settings-nav-text'>Home</p>

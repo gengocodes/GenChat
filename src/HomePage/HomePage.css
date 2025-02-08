@@ -15,15 +15,17 @@ body {
 }
 
 .navHome{
+    position: fixed;
     height: 100vh;
     width: 9vh;
-    z-index: 2;
+    z-index: 100;
     bottom: 0;
     left: 0;
     background: transparent;
+    padding-top: 2vh;
     backdrop-filter: blur(10px);
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-    padding-top: 3vh;
+    transition: width 0.3s ease-in-out;
 }
 .navHome:hover{
     width: 20vh;
@@ -34,6 +36,7 @@ body {
     margin-left: 3vh;
     height: 3vh;
     width: 3vh;
+    flex-shrink: 0; /* Prevents shrinking */
 }
 .navHome .logo, .settings-icon, .logout-icon, .chat-icon, .post-icon{
     margin-top: 1.5vh;
@@ -45,13 +48,25 @@ body {
     height: 3vh;
     width: 3vh;
 }
-.nav-text, .genchat, .user-name {
-    display: none;
+
+.nav-text, .home-genchat, .home-user-name {
+    opacity: 0;
     font-size: 1.5vh;
     color: white;
-    text-align: center;
-    position: relative;
     margin-left: -1.5vh;
+    white-space: nowrap;  /* Prevents text from wrapping */
+    overflow: hidden;      /* Hides overflow text */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    display: block;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out 0.3s, ease-in-out 0.3s; 
+    /* Delays transition by 0.3s to match navHome */
+}
+.nav-text:hover, .home-genchat:hover, .home-user-name:hover {
+    color: yellow;
+}
+.home-user-name {
+    display: inline;
 }
 .logo-cont,
 .user-cont,
@@ -62,31 +77,45 @@ body {
     display: flex;
     align-items: center;
 }
-.navHome:hover .nav-text, .navHome:hover .genchat, .navHome:hover .user-name{
-    display: block;
+.navHome:hover .nav-text, .navHome:hover .home-genchat, .navHome:hover .home-user-name{
+    opacity: 1;
+    visibility: visible;
 }
 .navHome .logo-cont:hover, .user-cont:hover, .chat-icon-cont:hover, .post-icon-cont:hover, 
 .settings-icon-cont:hover, .logout-icon-cont:hover {
     border: solid 0.5px;
     cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    transition:  ease-in-out 0.1s; 
 }
 .homepage-container {
+    display: flex;
     height: 100vh;
     width: 100vw;
     background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    
 }
 
-/* Content card styling */
 .homepage-content {
-    margin-top: 8vh; /* Push below the header */
-    margin-left: 7vh; /* Push right of the sidebar */
-    bottom: 0;
-    position: fixed;
-    width: calc(100vw - 7vh);
-    height: calc(100vh - 8vh);
-    z-index: 1;
+    margin-left: 9vh;
+    flex-grow: 1;   /* Take up remaining space */
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20px); /* Starts slightly below */
+    animation: fadeSlideIn 0.8s ease-in-out forwards;
 }
-
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .chat-button {
     color: white;
     background: none;

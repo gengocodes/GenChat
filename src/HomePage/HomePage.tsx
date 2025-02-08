@@ -43,11 +43,11 @@ function HomePage() {
             <nav className='navHome'>
                 <div className='logo-cont' onClick={goToCreator}>
                     <img src={logo} className='logo' alt="" />
-                    <p className='genchat'>Creator</p>
+                    <p className='home-genchat'>Creator</p>
                 </div>
                 <div className='user-cont'>
                     <img src={photoURL} className='homeimg' alt="" />
-                    <p className='user-name'>{displayName}</p>
+                    <p className='home-user-name'>{displayName}</p>
                 </div>
                 <div className='settings-icon-cont' onClick={navSettings}>
                     <img src={settingsicon} alt='' className='settings-icon' />
@@ -68,12 +68,7 @@ function HomePage() {
             </nav>
 
             <div className="homepage-content">
-                <button onClick={navChatRoom} className="chat-button">
-                Chat
-                </button>
-                <button onClick={navPostRoom} className="post-button">
-                Post
-                </button>
+                <p>HOME</p>
             </div>
       </div>
     )

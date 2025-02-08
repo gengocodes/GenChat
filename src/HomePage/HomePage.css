@@ -37,6 +37,8 @@ body {
     height: 3vh;
     width: 3vh;
     flex-shrink: 0; /* Prevents shrinking */
+    border: outset;
+    border-width: 1px;
 }
 .navHome .logo, .settings-icon, .logout-icon, .chat-icon, .post-icon{
     margin-top: 1.5vh;

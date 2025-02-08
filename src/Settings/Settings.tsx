@@ -20,7 +20,7 @@ const Settings: React.FC = () => {
     const [lastName, setLastName] = useState('');
     const [newPhotoURL, setNewPhotoURL] = useState<string | null>(null); // for new photo URL
     const navigate = useNavigate();
-  
+    const [isLoading, setIsLoading] = useState(false);
     // Initialize firstName and lastName if a displayName exists
     useEffect(() => {
       if (displayName) {
@@ -34,6 +34,8 @@ const Settings: React.FC = () => {
       e.preventDefault(); // Prevent page reload on submit
   
       if (!user) return;
+
+      setIsLoading(true); // Start loading animation
   
       const newName = `${firstName} ${lastName}`;
       try {
@@ -53,6 +55,8 @@ const Settings: React.FC = () => {
         navigate('/updated');
       } catch (error) {
         console.error("Error updating name:", error);
+      } finally {
+        setIsLoading(false); // Stop loading animation
       }
     };
   
@@ -91,17 +95,24 @@ const Settings: React.FC = () => {
       auth.signOut(); // Sign out the user
       navigate('/'); // Redirect to LandingPage
     };
-  
-    const [isUsernameVisible, setIsUsernameVisible] = useState(false);
-    const [isProfilePicVisible, setIsProfilePicVisible] = useState(false);
 
-    const toggleUsername = () => {
-      setIsUsernameVisible(!isUsernameVisible);
-    };
-    const toggleProfilePic = () => {
-      setIsProfilePicVisible(!isProfilePicVisible);
+    // const [isUsernameVisible, setIsUsernameVisible] = useState(false);
+    // const [isProfilePicVisible, setIsProfilePicVisible] = useState(false);
+
+    // const toggleUsername = () => {
+    //   setIsUsernameVisible(!isUsernameVisible);
+    // };
+    // const toggleProfilePic = () => {
+    //   setIsProfilePicVisible(!isProfilePicVisible);
+    // };
+
+    const [visibleSection, setVisibleSection] = useState<string | null>(null);
+
+    const toggleSection = (section: string) => {
+      setVisibleSection((prevSection) => (prevSection === section ? null : section));
     };
 
+    
     return (
       <div className='settings'>
         <header>
@@ -135,11 +146,17 @@ const Settings: React.FC = () => {
 
         <div className='settingsarea'>
           <div className='settings-selection'>
-            <div className='settings-cont' onClick={toggleUsername}> 
+            <div 
+              className={`settings-cont ${visibleSection === 'username' ? 'active' : ''}`} 
+              onClick={() => toggleSection('username')}
+            > 
               <h1 className='your-account'> Username </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont' onClick={toggleProfilePic}> 
+            <div 
+              className={`settings-cont ${visibleSection === 'profilePicture' ? 'active' : ''}`} 
+              onClick={() => toggleSection('profilePicture')}
+            > 
               <h1 className='your-account'> Profile Picture </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
@@ -170,46 +187,36 @@ const Settings: React.FC = () => {
           </div>
         </div>
 
-              {isUsernameVisible && (
+              {visibleSection === 'username' && (
                 <form className='settings-forms' onSubmit={handleSubmit}>
+                  <div className='div-first-name'>
+                  <h1>Update your Username</h1>
                     <label htmlFor="firstName">First Name:</label>
                     <TextInput
                         type='text'
                         id="firstName"
-                        placeholder="First Name"
-                        value={firstName}
+                        placeholder="Cardo"
+                        className='input-firstname'
                         onChange={(e) => setFirstName(e.target.value)}
                     />
                     <label htmlFor="lastName">Last Name:</label>
                     <TextInput
                         type='text'
                         id="lastName"
-                        placeholder="Last Name"
-                        value={lastName}
+                        placeholder="Dalisay"
+                        className='input-lastname'
                         onChange={(e) => setLastName(e.target.value)}
                     />
-                    <input type="submit" value="Submit" className='settings-submit' />
+                    <button type="submit" className='settings-submit' disabled={isLoading}>
+                      {isLoading ? <div className="loading-spinner"></div> : "Submit"}
+                    </button>
+                  </div>
                 </form>
             )}
 
-              {isProfilePicVisible && (
+              {visibleSection === 'profilePicture' && (
                 <form className='settings-forms' onSubmit={handleSubmit}>
-                    <label htmlFor="firstName">First Name:</label>
-                    <TextInput
-                        type='text'
-                        id="firstName"
-                        placeholder="First Name"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    />
-                    <label htmlFor="lastName">Last Name:</label>
-                    <TextInput
-                        type='text'
-                        id="lastName"
-                        placeholder="Last Name"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                    />
+                                <img src={newPhotoURL || photoURL} className='homeimg' alt="" />
                     <label htmlFor="photo">Profile Photo:</label>
                     <input
                         type="file"

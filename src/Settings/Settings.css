@@ -31,6 +31,11 @@
 .settings-cont:hover{
     border: 1px solid;
 }
+.settings-cont.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00000056;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+}
 .settings-cont h1{
     margin-left: 3vh;
     margin-top: 3vh;
@@ -49,21 +54,89 @@
     right: 0;
     left: auto;
     position: static;
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
     border: none;
-    width: 90vw;
     z-index: 0;
     box-shadow: none;
     display: flex;
-    flex-wrap: wrap;
 }
-input {
+.div-first-name{
+    width: 100%;
+    height: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.div-first-name h1{
+    width: 100%;
+    margin-top: 10%;
+    display: block;
+    position: static;
+    font-style: oblique;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.div-first-name label{
+    width: 100%;
+    display: block;
+    position: static;
+    margin-top: 5vh;
+    margin-bottom: -4.8vh;
+}
+.div-first-name .input-firstname, .input-lastname{
+    margin-left: 25%;
+    right: auto;
+    width: 50%;
+    display: block;
+    position: static;
+    margin-top: 5vh;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.div-first-name .input-firstname:hover, .input-lastname:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.div-first-name .input-firstname:focus, .input-lastname:focus{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+.settings-submit {
+    margin-left: 25%;
+    width: 50%;
     display: flex;
-    flex-wrap: wrap;
-    width: 10rem;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    margin-top: 5vh;
+    cursor: pointer;
+    background-color: rgba(0, 225, 255, 0.1);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
 }
-.settings-submit{
-    cursor:pointer;
+
+.settings-submit:hover {
+    background-color: rgba(0, 225, 255, 0.5);
+}
+.settings-submit:active {
+    background-color: rgba(0, 225, 255, 0.8);
+}
+.settings-submit:disabled {
+    background-color: rgba(0, 225, 255, 0.8);
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 .settings-greet{
     font-size: 10vh;

@@ -42,11 +42,11 @@ function HomePage() {
 
             <nav className='navHome'>
                 <div className='logo-cont' onClick={goToCreator}>
-                    <img src={logo} className='logo' alt="" />
+                    <img src={logo} className='home-logo' alt="" />
                     <p className='home-genchat'>Creator</p>
                 </div>
                 <div className='home-user-cont'>
-                    <img src={photoURL} className='homeimg' alt="" />
+                    <img src={photoURL} className='home-homeimg' alt="" />
                     <p className='home-user-name'>{displayName}</p>
                 </div>
                 <div className='settings-icon-cont' onClick={navSettings}>

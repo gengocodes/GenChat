@@ -17,7 +17,7 @@ body {
 .navHome{
     position: fixed;
     height: 100vh;
-    width: 9vh;
+    width: 4rem;
     z-index: 100;
     bottom: 0;
     left: 0;
@@ -27,42 +27,45 @@ body {
     transition: width 0.3s ease-in-out;
 }
 .navHome:hover{
-    width: 20vh;
+    width: 10rem;
 }
 .logo-cont{
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px groove rgba(255, 255, 255, 0.4);
 }
-.home-user-cont{
-    margin-top: 1.5vh;
+
+.home-logo{
+    margin-left: 1.2rem;
+    height: 1.5rem;
+    width: 1.5rem;
 }
-.homeimg{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
-    height: 3vh;
-    width: 3vh;
+.home-homeimg{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     flex-shrink: 0; /* Prevents shrinking */
     border: outset;
     border-width: 1px;
 }
-.navHome .logo, .settings-icon, .logout-icon, .chat-icon, .post-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
+.navHome .settings-icon, .logout-icon, .chat-icon, .post-icon{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.2rem;
     border-radius: 0px;
     bottom: 0;
     color: white;
-    height: 3vh;
-    width: 3vh;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .nav-text, .home-genchat, .home-user-name {
     opacity: 0;
-    font-size: 1.5vh;
+    font-size: 0.7rem;
     color: white;
-    margin-left: -1.5vh;
+    margin-left: -0.7rem;
     white-space: nowrap;  /* Prevents text from wrapping */
     overflow: hidden;      /* Hides overflow text */
     text-overflow: ellipsis; /* Adds "..." if text is too long */

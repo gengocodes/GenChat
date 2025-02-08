@@ -12,8 +12,8 @@
 }
 .settings-selection{
     margin-left: 7vh;
-    height: 92vh;
-    width: 40vw;
+    width: calc(40vw - 7vh);
+    height: calc(100vh - 8vh);
     position: static;
     bottom: 0;
     left: 0;

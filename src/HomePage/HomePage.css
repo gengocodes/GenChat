@@ -141,6 +141,7 @@ header .logo{
 /* Main homepage container */
 .homepage-container {
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -152,10 +153,12 @@ header .logo{
 
 /* Content card styling */
 .homepage-content {
+    margin-top: 8vh; /* Push below the header */
+    margin-left: 7vh; /* Push right of the sidebar */
     bottom: 0;
     position: fixed;
-    height: 92vh;
-    width: 100vw;
+    width: calc(100vw - 7vh);
+    height: calc(100vh - 8vh);
     z-index: 1;
 }
 

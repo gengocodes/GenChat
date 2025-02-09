@@ -167,7 +167,7 @@
     display: block;
     position: static;
     font-size: 4vw;
-    font-family: "Quicksand", serif;
+    font-family: "Quicksand", "Poppins", serif;
     font-weight: 1000;
 }
 .prof-container{

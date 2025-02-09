@@ -154,49 +154,49 @@ const Settings: React.FC = () => {
               className={`settings-cont ${visibleSection === 'username' ? 'active' : ''}`} 
               onClick={() => toggleSection('username')}
             > 
-              <h1 className='your-account'> Username </h1>
+              <h1 className='your-account'>Change Username </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div 
               className={`settings-cont ${visibleSection === 'profilePicture' ? 'active' : ''}`} 
               onClick={() => toggleSection('profilePicture')}
             > 
-              <h1 className='your-account'> Profile Picture </h1>
+              <h1 className='your-account'>Change Profile Picture </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div
               className={`settings-cont ${visibleSection === 'comingSoon' ? 'active' : ''}`} 
               onClick={() => toggleSection('comingSoon')}
             > 
-              <h1 className='your-account'> Email </h1>
+              <h1 className='your-account'>Linked Accounts </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div
               className={`settings-cont ${visibleSection === 'comingSoon2' ? 'active' : ''}`} 
               onClick={() => toggleSection('comingSoon2')}
             > 
-              <h1 className='your-account'> Password </h1>
+              <h1 className='your-account'>Change Password </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div
               className={`settings-cont ${visibleSection === 'comingSoon3' ? 'active' : ''}`} 
               onClick={() => toggleSection('comingSoon3')}
             >  
-              <h1 className='your-account'> Two-Factor Authentication </h1>
+              <h1 className='your-account'>Two-Factor Authentication </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div
               className={`settings-cont ${visibleSection === 'comingSoon4' ? 'active' : ''}`} 
               onClick={() => toggleSection('comingSoon4')}
             >  
-              <h1 className='your-account'> Language Preferences </h1>
+              <h1 className='your-account'>Language Preferences </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div
               className={`settings-cont ${visibleSection === 'comingSoon5' ? 'active' : ''}`} 
               onClick={() => toggleSection('comingSoon5')}
             >  
-              <h1 className='your-account'> Privacy Settings </h1>
+              <h1 className='your-account'>Privacy Settings </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
             <div

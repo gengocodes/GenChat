@@ -81,12 +81,12 @@
 }
 .div-first-name h1{
     width: 100%;
-    margin-top: 10%;
+    margin-top: 20%;
     display: block;
     position: static;
-    font-style: oblique;
-    font-size: 5vh;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 4vw;
+    font-family: "Quicksand", serif;
+    font-weight: 1000;
 }
 .div-first-name label{
     width: 100%;
@@ -94,11 +94,11 @@
     position: static;
     margin-top: 5vh;
     margin-bottom: -4.3vh;
-    font-size: 2vh;
+    font-size: 2vw;
 }
 .div-first-name .input-firstname, .input-lastname{
     margin-left: 25%;
-    font-size: 2vh;
+    font-size: 2vw;
     right: auto;
     width: 50%;
     display: block;
@@ -125,7 +125,7 @@
     background-color: rgba(0, 225, 255, 0.1);
     border: none;
     padding: 10px;
-    font-size: 2vh;
+    font-size: 2vw;
 }
 
 .settings-submit:hover {
@@ -140,8 +140,8 @@
 }
 
 .loading-spinner {
-    width: 20px;
-    height: 20px;
+    width: 2vw;
+    height: 2vw;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     border-top-color: #fff;
@@ -152,7 +152,49 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-
+.settings-forms-profilepic{
+    position: static;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    border: none;
+    z-index: 0;
+    box-shadow: none;
+    display: flex;
+}
+.settings-forms-profilepic h1{
+    width: 100%;
+    margin-top: 20%;
+    display: block;
+    position: static;
+    font-size: 4vw;
+    font-family: "Quicksand", serif;
+    font-weight: 1000;
+}
+.prof-container{
+    width: 100%;
+    height: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.update-homeimg{
+    margin-top: 3vh;
+    height: 15vw;
+    width: 15vw;
+    border: 5px;
+    border-style: double;
+    top: 0;
+}
+.input-img{
+    margin-left: 25%;
+    font-size: 2vw;
+    right: auto;
+    width: 50%;
+    display: block;
+    position: static;
+    margin-top: 2vh;
+    background-color: rgba(255, 255, 255, 0.1);
+}
 .navSettings{
     position: absolute;
     min-height: 100vh;
@@ -246,17 +288,5 @@
     }
     .settings-selection{
         width: 30vw;
-    }
-    .div-first-name h1{
-        font-size: 3vh;
-    }
-    .div-first-name label{
-        font-size: 1.5vh;
-    }
-    .div-first-name .input-firstname, .input-lastname{
-        font-size: 1.5vh;
-    }
-    .settings-submit {
-        font-size: 1.5vh;
     }
 }

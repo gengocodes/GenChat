@@ -216,15 +216,22 @@ const Settings: React.FC = () => {
             )}
 
               {visibleSection === 'profilePicture' && (
-                <form className='settings-forms' onSubmit={handleSubmit}>
-                                <img src={newPhotoURL || photoURL} className='homeimg' alt="" />
-                    <label htmlFor="photo">Profile Photo:</label>
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                  <h1>Update your Profile Picture</h1>
+                  <img src={newPhotoURL || photoURL} className='update-homeimg' alt="" />
                     <input
                         type="file"
                         id="photo"
+                        className='input-img'
+                        accept="image/*"
                         onChange={handlePhotoChange}
+                        required
                     />
-                    <input type="submit" value="Submit" className='settings-submit' />
+                    <button type="submit" value="Submit" className='settings-submit' disabled={isLoading}>
+                    {isLoading ? <div className="loading-spinner"></div> : "Submit"}
+                    </button>
+                  </div>
                 </form>
             )}
   

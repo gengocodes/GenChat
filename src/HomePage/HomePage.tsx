@@ -102,15 +102,18 @@ function HomePage() {
             <div className="homepage-content">
                 {weather ? (
                     <div className="weather-widget">
-                        <img src={weather.icon} alt="weather icon" />
-                        <p>
-                            {weather.city}: {weather.temp}°C, {weather.description}
-                        </p>
+                        <img src={weather.icon} alt="weather icon" className="weather-icon" />
+                        <div className="weather-details">
+                            <h2 className="weather-city">{weather.city}</h2>
+                            <p className="weather-temp">{weather.temp}°C</p>
+                            <p className="weather-desc">{weather.description}</p>
+                        </div>
                     </div>
                 ) : (
-                    <p>Loading weather data...</p>
+                    <p className="loading-text">Loading weather data...</p>
                 )}
             </div>
+
 
         </div>
     );

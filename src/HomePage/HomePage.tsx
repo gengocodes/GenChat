@@ -9,7 +9,11 @@ import HomeBackground from './particles';
 import { auth } from '../FirebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-const API_KEY = 'faa719ec50dffd30794d674819a2d118'; 
+const WEATHER_API_KEY = 'faa719ec50dffd30794d674819a2d118'; 
+const NEWS_API_KEY = '03c14040df8bdab3daf48b314786f6b3';
+const QUOTES_API_URL = 'https://zenquotes.io/api/random';
+const MEME_API_URL = 'https://meme-api.com/gimme';
+const FUN_FACT_API_URL = 'https://uselessfacts.jsph.pl/random.json?language=en';
 
 interface WeatherData {
     temp: number;
@@ -21,43 +25,83 @@ interface WeatherData {
 function HomePage() {
     const navigate = useNavigate();
     const [weather, setWeather] = useState<WeatherData | null>(null);
-
+    const [news, setNews] = useState<{ title: string }[]>([]);
+    const [quote, setQuote] = useState('');
+    const [meme, setMeme] = useState('');
+    const [funFact, setFunFact] = useState('');
+    
     useEffect(() => {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    console.log("Latitude:", position.coords.latitude);
-                    console.log("Longitude:", position.coords.longitude);
                     fetchWeather(position.coords.latitude, position.coords.longitude);
                 },
                 (error) => {
                     console.error("Error getting location:", error);
                 }
             );
-        } else {
-            console.error("Geolocation is not supported by this browser.");
         }
-    }, []);    
+        fetchNews();
+        fetchQuote();
+        fetchMeme();
+        fetchFunFact();
+    }, []);
+
 
     const fetchWeather = async (lat: number, lon: number) => {
         try {
             const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
             );
             const data = await response.json();
-    
-            if (data.main && data.weather && data.weather.length > 0) {
-                setWeather({
-                    temp: data.main.temp,
-                    description: data.weather[0].description,
-                    icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
-                    city: data.name,
-                });
-            }
+            setWeather({
+                temp: data.main.temp,
+                description: data.weather[0].description,
+                icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
+                city: data.name,
+            });
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
-    };    
+    };
+
+    const fetchNews = async () => {
+        try {
+            const response = await fetch(`https://gnews.io/api/v4/top-headlines?lang=en&token=${NEWS_API_KEY}`);
+            const data = await response.json();
+            if (!data.articles) throw new Error("No articles found");
+            setNews(data.articles.slice(0, 5));
+        } catch (error) {
+            console.error("Error fetching news:", error);
+        }
+    };      
+
+    const fetchQuote = async () => {
+        try {
+            const response = await fetch(QUOTES_API_URL);
+            const data = await response.json();
+            console.log("Quote API Response:", data); // Debugging
+            if (!data || !data[0]) throw new Error("No quote found");
+            setQuote(data[0].q + " - " + data[0].a);
+        } catch (error) {
+            console.error("Error fetching quote:", error);
+            setQuote("Stay positive and keep moving forward! 💪");
+        }
+    };
+    
+    
+
+    const fetchMeme = async () => {
+        const response = await fetch(MEME_API_URL);
+        const data = await response.json();
+        setMeme(data.url);
+    };
+
+    const fetchFunFact = async () => {
+        const response = await fetch(FUN_FACT_API_URL);
+        const data = await response.json();
+        setFunFact(data.text);
+    };
 
     const handleSignOut = () => {
         auth.signOut();
@@ -100,20 +144,31 @@ function HomePage() {
             </nav>
 
             <div className="homepage-content">
-                {weather ? (
+                {weather && (
                     <div className="weather-widget">
                         <img src={weather.icon} alt="weather icon" className="weather-icon" />
-                        <div className="weather-details">
-                            <h2 className="weather-city">{weather.city}</h2>
-                            <p className="weather-temp">{weather.temp}°C</p>
-                            <p className="weather-desc">{weather.description}</p>
-                        </div>
+                        <p>{weather.city}: {weather.temp}°C, {weather.description}</p>
                     </div>
-                ) : (
-                    <p className="loading-text">Loading weather data...</p>
                 )}
+                <div className="news-widget">
+                    <h2>Trending News</h2>
+                    {news.map((article, index) => (
+                        <p key={index}>{article.title}</p>
+                    ))}
+                </div>
+                <div className="quote-widget">
+                    <h2>Motivational Quote</h2>
+                    <p>{quote}</p>
+                </div>
+                <div className="meme-widget">
+                    <h2>Random Meme</h2>
+                    <img src={meme} alt="Random Meme" className="meme-img" />
+                </div>
+                <div className="funfact-widget">
+                    <h2>Did You Know?</h2>
+                    <p>{funFact}</p>
+                </div>
             </div>
-
 
         </div>
     );

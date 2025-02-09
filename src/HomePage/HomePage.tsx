@@ -157,11 +157,10 @@ function HomePage() {
                     ))}
                 </div>
                 <div className="quote-widget">
-                    <h2>Motivational Quote</h2>
                     <p>{quote}</p>
                 </div>
                 <div className="meme-widget">
-                    <h2>Random Meme</h2>
+
                     <img src={meme} alt="Random Meme" className="meme-img" />
                 </div>
                 <div className="funfact-widget">

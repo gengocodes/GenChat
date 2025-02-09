@@ -229,7 +229,7 @@ const Settings: React.FC = () => {
                         accept="image/*"
                     />
                     <label htmlFor="photo" className="custom-file-upload">Upload Image</label>
-                    <button type="submit" value="Submit" className='settings-submit-img' disabled={isLoading}>
+                    <button type="submit" value="Submit" className='settings-submit' disabled={isLoading}>
                     {isLoading ? <div className="loading-spinner"></div> : "Submit"}
                     </button>
                   </div>

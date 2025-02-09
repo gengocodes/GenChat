@@ -14,13 +14,6 @@
 
 body {
     background: linear-gradient(160deg, #070f21, #313944);
-    color: #f0f2f5;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 .landing-container {
@@ -54,7 +47,6 @@ body {
 .div1 .info{
   margin-left: 10%;
   margin-top: -30%;
-
 }
 .div1 h1 {
   font-family: "DM Serif Display", serif;
@@ -265,7 +257,7 @@ body {
 @media (max-width:480px) and (max-width:760px){
   .landing-container {
     grid-template-columns: 0vw 100vw 0vw; /* columns */
-    grid-template-rows: 0vh 38vh 60vh 0vh; /* rows */
+    grid-template-rows: 0vh 30vh 70vh 0vh; /* rows */
   }
   .landing-logo{
     height: 10vh;
@@ -279,7 +271,7 @@ body {
     align-items: left;
   }
   .div1 .info{
-    margin-top: 20%;
+    margin-top: 5%;
   }
   .info2{
     display: flex;
@@ -339,8 +331,8 @@ body {
   }
   .div2 form .input-box input {
     font-size: 3vw;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15%;
+    margin-right: 10%;
     width: 70%;
   }
   .div2 form .links button {

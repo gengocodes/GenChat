@@ -120,7 +120,7 @@
     align-items: center;
     justify-content: center;
     position: static;
-    margin-top: 5vh;
+    margin-top: 3vw;
     cursor: pointer;
     background-color: rgba(0, 225, 255, 0.1);
     border: none;
@@ -198,7 +198,7 @@
 .custom-file-upload {
     margin-top: 3vh;
     margin-left: 25%;
-    margin-bottom: -2vh;
+    margin-bottom: 1vh;
     font-size: 1vw;
     right: auto;
     width: 50%;
@@ -219,6 +219,13 @@
 
 .custom-file-upload:active {
     background-color: rgba(255, 255, 255, 0.5);
+}
+.file-name {
+    font-size: 0.9vw;
+    color: white;
+}
+.settings-forms-profilepic .settings-submit{
+    margin-top: 2vw;
 }
 .navSettings{
     position: absolute;

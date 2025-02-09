@@ -21,6 +21,8 @@ const Settings: React.FC = () => {
     const [newPhotoURL, setNewPhotoURL] = useState<string | null>(null); // for new photo URL
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    const [fileName, setFileName] = useState("No file chosen");
+    
     // Initialize firstName and lastName if a displayName exists
     useEffect(() => {
       if (displayName) {
@@ -64,6 +66,7 @@ const Settings: React.FC = () => {
       if (!e.target.files || e.target.files.length === 0 || !user) return;
   
       const file = e.target.files[0];
+      setFileName(file.name);
       const storageRef = storage.ref();
       const photoRef = storageRef.child(`profilePhotos/${user.uid}`);
   
@@ -221,14 +224,15 @@ const Settings: React.FC = () => {
                   <h1>Update your Profile Picture</h1>
                   <img src={newPhotoURL || photoURL} className='update-homeimg' alt="" />
                     <input
-                        type="file"
-                        id="photo"
-                        className="input-img"
-                        onChange={handlePhotoChange}
-                        required
-                        accept="image/*"
+                      type="file"
+                      id="photo"
+                      className="input-img"
+                      onChange={handlePhotoChange}
+                      required
+                      accept="image/*"
                     />
                     <label htmlFor="photo" className="custom-file-upload">Upload Image</label>
+                    <span className="file-name">{fileName}</span>
                     <button type="submit" value="Submit" className='settings-submit' disabled={isLoading}>
                     {isLoading ? <div className="loading-spinner"></div> : "Submit"}
                     </button>

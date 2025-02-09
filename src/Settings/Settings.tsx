@@ -164,28 +164,46 @@ const Settings: React.FC = () => {
               <h1 className='your-account'> Profile Picture </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon')}
+            > 
               <h1 className='your-account'> Email </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon2' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon2')}
+            > 
               <h1 className='your-account'> Password </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
-              <h1 className='your-account'> Username </h1>
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon3' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon3')}
+            >  
+              <h1 className='your-account'> Two-Factor Authentication </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
-              <h1 className='your-account'> Profile Picture </h1>
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon4' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon4')}
+            >  
+              <h1 className='your-account'> Language Preferences </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
-              <h1 className='your-account'> Email </h1>
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon5' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon5')}
+            >  
+              <h1 className='your-account'> Privacy Settings </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
-            <div className='settings-cont'> 
-              <h1 className='your-account'> Password </h1>
+            <div
+              className={`settings-cont ${visibleSection === 'comingSoon6' ? 'active' : ''}`} 
+              onClick={() => toggleSection('comingSoon6')}
+            >  
+              <h1 className='your-account'> App Theme </h1>
               <img src={greatericon} alt="" className='greater-icon' />
             </div>
           </div>
@@ -239,7 +257,48 @@ const Settings: React.FC = () => {
                   </div>
                 </form>
             )}
-  
+            {visibleSection === 'comingSoon' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
+            {visibleSection === 'comingSoon2' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
+            {visibleSection === 'comingSoon3' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
+            {visibleSection === 'comingSoon4' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
+            {visibleSection === 'comingSoon5' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
+            {visibleSection === 'comingSoon6' && (
+                <form className='settings-forms-profilepic' onSubmit={handleSubmit}>
+                  <div className='prof-container'>
+                      <h1>Coming Soon...</h1>
+                  </div>
+                </form>
+            )}
         {/* {displayName ? 
         <div className='settings-greet'>Hello, {displayName}</div>
          : "No name!"} */}

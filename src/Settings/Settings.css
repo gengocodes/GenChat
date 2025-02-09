@@ -72,6 +72,21 @@
     box-shadow: none;
     display: flex;
 }
+form {
+    animation: fadeInUp 0.5s ease-out forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Animation to fade and slide the form into view */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .div-first-name{
     width: 100%;
     height: 100%;

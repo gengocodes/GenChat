@@ -119,13 +119,13 @@ const Settings: React.FC = () => {
     return (
       <div className='settings'>
         <nav className='navSettings'>
-          <div className='logo-cont' onClick={goToCreator}>
-          <img src={logo} className='logo' alt="" />
-            <p className='genchat'>Creator</p>
+          <div className='settings-logo-cont' onClick={goToCreator}>
+          <img src={logo} className='settings-logo' alt="" />
+            <p className='settings-genchat'>Creator</p>
           </div>
-          <div className='user-cont'>
-            <img src={photoURL} className='homeimg' alt="" />
-            <p className='user-name'>{displayName}</p>
+          <div className='settings-user-cont'>
+            <img src={photoURL} className='settings-homeimg' alt="" />
+            <p className='settings-user-name'>{displayName}</p>
           </div>
           <div className='settings-home-icon-cont' onClick={navHome}>
             <img src={homeicon} alt='' className='settings-home-icon' />

@@ -85,7 +85,7 @@
     display: block;
     position: static;
     font-size: 4vw;
-    font-family: "Quicksand", serif;
+    font-family: "Quicksand", "Poppins", serif;
     font-weight: 1000;
 }
 .div-first-name label{
@@ -190,10 +190,35 @@
     font-size: 1vw;
     right: auto;
     width: 50%;
-    display: block;
-    position: static;
-    margin-top: 2vh;
+}
+.input-img {
+    display: none; /* Hides the default file input */
+}
+
+.custom-file-upload {
+    margin-top: 3vh;
+    margin-left: 25%;
+    margin-bottom: -2vh;
+    font-size: 1vw;
+    right: auto;
+    width: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 12px;
+    font-size: 1.2vw;
+    border: 1px groove white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-file-upload:active {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .navSettings{
     position: absolute;

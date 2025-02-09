@@ -223,12 +223,13 @@ const Settings: React.FC = () => {
                     <input
                         type="file"
                         id="photo"
-                        className='input-img'
-                        accept="image/*"
+                        className="input-img"
                         onChange={handlePhotoChange}
                         required
+                        accept="image/*"
                     />
-                    <button type="submit" value="Submit" className='settings-submit' disabled={isLoading}>
+                    <label htmlFor="photo" className="custom-file-upload">Upload Image</label>
+                    <button type="submit" value="Submit" className='settings-submit-img' disabled={isLoading}>
                     {isLoading ? <div className="loading-spinner"></div> : "Submit"}
                     </button>
                   </div>

@@ -26,14 +26,27 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .settings-cont:hover{
-    border: 1px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
 }
 .settings-cont.active {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #00000056;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .settings-cont h1{
     margin-left: 3vh;

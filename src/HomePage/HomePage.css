@@ -235,9 +235,9 @@ body {
 
 .weather-widget, .news-widget, .quote-widget, 
 .meme-widget, .history-widget, .funfact-widget {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
     padding: 20px;

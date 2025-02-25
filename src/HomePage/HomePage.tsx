@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 const WEATHER_API_KEY = 'faa719ec50dffd30794d674819a2d118'; 
 const NEWS_API_KEY = '03c14040df8bdab3daf48b314786f6b3';
-const QUOTES_API_URL = 'https://zenquotes.io/api/random';
 const MEME_API_URL = 'https://meme-api.com/gimme';
 const FUN_FACT_API_URL = 'https://uselessfacts.jsph.pl/random.json?language=en';
 
@@ -26,7 +25,6 @@ function HomePage() {
     const navigate = useNavigate();
     const [weather, setWeather] = useState<WeatherData | null>(null);
     const [news, setNews] = useState<{ title: string }[]>([]);
-    const [quote, setQuote] = useState('');
     const [meme, setMeme] = useState('');
     const [funFact, setFunFact] = useState('');
     
@@ -42,7 +40,6 @@ function HomePage() {
             );
         }
         fetchNews();
-        fetchQuote();
         fetchMeme();
         fetchFunFact();
     }, []);
@@ -75,21 +72,6 @@ function HomePage() {
             console.error("Error fetching news:", error);
         }
     };      
-
-    const fetchQuote = async () => {
-        try {
-            const response = await fetch(QUOTES_API_URL);
-            const data = await response.json();
-            console.log("Quote API Response:", data); // Debugging
-            if (!data || !data[0]) throw new Error("No quote found");
-            setQuote(data[0].q + " - " + data[0].a);
-        } catch (error) {
-            console.error("Error fetching quote:", error);
-            setQuote("Stay positive and keep moving forward! 💪");
-        }
-    };
-    
-    
 
     const fetchMeme = async () => {
         const response = await fetch(MEME_API_URL);
@@ -155,9 +137,6 @@ function HomePage() {
                     {news.map((article, index) => (
                         <p key={index}>{article.title}</p>
                     ))}
-                </div>
-                <div className="quote-widget">
-                    <p>{quote}</p>
                 </div>
                 <div className="meme-widget">
 

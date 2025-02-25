@@ -8,6 +8,7 @@
 body {
     background-color: #1b1f27;
     color: #f0f2f5;
+    overflow: hidden;
 }
 .home-background{
     position: fixed;
@@ -15,6 +16,7 @@ body {
 }
 
 .navHome{
+    overflow: visible;
     position: absolute;
     min-height: 100vh;
     max-height: 100vh;

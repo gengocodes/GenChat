@@ -103,7 +103,7 @@ const ChatRoom: React.FC = () => {
       });
     }, [messages]);
   return (
-    <>
+    <div className='background'>
       <header className="chatroom-header">
         <BackButton />
         <SignOut className='' />
@@ -114,13 +114,19 @@ const ChatRoom: React.FC = () => {
         ))}
         <div ref={dummy}></div>
       </main>
+        <div className='chatrooms'>
 
+        </div>
+        <div className='roominfo'>
+
+        </div>
       {auth.currentUser && (
         <form onSubmit={sendMessage}>
           <input
             value={formValue}
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Type a message"
+            className='inputmessage'
           />
           {/* File input field with ref to reset after sending */}
           <input
@@ -128,11 +134,12 @@ const ChatRoom: React.FC = () => {
             accept="image/*"
             ref={fileInputRef} // Attach ref to input field
             onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
+            className='inputimage'
           />
           <button type="submit">Send</button>
         </form>
       )}
-    </>
+    </div>
   );
 };
 

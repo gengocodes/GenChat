@@ -67,6 +67,7 @@
 }
 .nav-link {
   border-radius: 10px;
+  color: white;
 }
 .nav-link:hover {
   cursor: pointer;
@@ -104,6 +105,7 @@
   font-family: "Pixelify Sans", serif;
   font-size: 1.7rem;
   font-weight: 300;
+  color: white;
 }
 .gengo-bit {
   font-family: "Pixelify Sans", serif;

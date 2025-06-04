@@ -1,270 +1,321 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #1b1f27;
-    color: #f0f2f5;
-    overflow: hidden;
-}
-.home-background{
-    position: fixed;
-    z-index: 0;
-}
-
-.navHome{
-    overflow: visible;
-    position: absolute;
-    min-height: 100vh;
-    max-height: 100vh;
-    width: 9vh;
-    z-index: 100;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-    transition: width 0.3s ease-in-out;
-}
-.navHome:hover{
-    width: 20vh;
-}
-.logo-cont{
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    border-bottom: 1px groove rgba(255, 255, 255, 0.2);
-}
-.home-user-cont{
-    margin-top: 1.5vh;
-}
-.home-homeimg{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
-    height: 3vh;
-    width: 3vh;
-    flex-shrink: 0; /* Prevents shrinking */
-    border: outset;
-    border-width: 1px;
-}
-.navHome .home-logo, .settings-icon, .logout-icon, .chat-icon, .post-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
-    border-radius: 0px;
-    bottom: 0;
-    color: white;
-    height: 3vh;
-    width: 3vh;
-}
-
-.nav-text, .home-genchat, .home-user-name {
-    opacity: 0;
-    font-size: 1.5vh;
-    color: white;
-    margin-left: -1.5vh;
-    white-space: nowrap;  /* Prevents text from wrapping */
-    overflow: hidden;      /* Hides overflow text */
-    text-overflow: ellipsis; /* Adds "..." if text is too long */
-    display: block;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out 0.3s, ease-in-out 0.3s; 
-    /* Delays transition by 0.3s to match navHome */
-}
-.nav-text:hover, .home-genchat:hover, .home-user-name:hover {
-    color: yellow;
-}
-.home-user-name {
-    display: inline;
-}
-.logo-cont,
-.home-user-cont,
-.settings-icon-cont, 
-.post-icon-cont, 
-.chat-icon-cont, 
-.logout-icon-cont {
-    display: flex;
-    align-items: center;
-}
-.navHome:hover .nav-text, .navHome:hover .home-genchat, .navHome:hover .home-user-name{
-    opacity: 1;
-    visibility: visible;
-}
-.navHome .logo-cont:hover, .home-user-cont:hover, .chat-icon-cont:hover, .post-icon-cont:hover, 
-.settings-icon-cont:hover, .logout-icon-cont:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: yellow;
-    transition:  ease-in-out 0.1s; 
+.main-homepage {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
 }
 .homepage-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  backdrop-filter: blur(6px);
 }
+.home-logo {
+  height: 30px;
+  width: 30px;
+}
+.home-selection {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  color: #b6b09f;
+}
+.home-div1 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.home-div2 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.home-div3 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.home1 {
+  height: 7%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #b6b09f;
+  background-color: rgb(12, 12, 12);
+  z-index: 100;
+}
+.logo-cont {
+  margin-left: 10%;
+}
+.img-cont {
+  margin-right: 0;
+}
+.home-cont {
+  display: flex;
+  gap: 30px;
+  height: 100%;
+  align-items: center;
+}
+.settings-cont,
+.chat-cont,
+.logout-cont,
+.img-cont,
+.homeic-cont,
+.notif-cont {
+  height: 70%;
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  align-items: center;
 
+  transition: none;
+}
+.settings-cont:hover,
+.chat-cont:hover,
+.logout-cont:hover,
+.homeic-cont:hover {
+  background-color: #252525;
+}
+.logout-icon,
+.chat-icon,
+.settings-icon,
+.homeic-icon,
+.notif-icon {
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+.settings-cont.active,
+.chat-cont.active,
+.logout-cont.active,
+.homeic-cont.active {
+  border-bottom: 2px solid #a09a8a;
+}
+.img-cont {
+  margin-right: 5%;
+}
+.home-homeimg {
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  border: 3px solid white;
+}
 .homepage-content {
-    display: grid;
-    grid-template-columns: 20fr 10fr repeat(2, 20fr) 30fr;
-    grid-template-rows: 1fr 3fr 2fr 3fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin-left: 9vh;
-    flex: 1;
-    position: static;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(20px); /* Starts slightly below */
-    animation: fadeSlideIn 0.8s ease-in-out forwards;
+  height: 93%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
 }
-@keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cont1 {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
 }
-.chat-button {
-    color: white;
-    background: none;
-    height: 92vh;
-    border-radius: none;
-    left: 0;
-    position: fixed;
-    margin-left: 4vw;
-    width: 48vw;
-    z-index: 10;
+.cont2 {
+  height: 100%;
+  width: 50%;
+  border-left: 1px solid wheat;
+  border-right: 1px solid wheat;
+  color: white;
+  display: flex;
+  font-size: 100px;
+  overflow: hidden;
 }
-.post-button {
-    color: white;
-    background: none;
-    height: 92vh;
-    border-radius: none;
-    right: 0;
-    position: fixed;
-    width: 48vw;
-    z-index: 10;
+.holder {
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50%;
 }
-.homepage-button:hover {
-    background: #ffd75e;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-.homepage-button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* Dropdown arrow styling */
-.dropdown-arrow {
-    font-size: 1.2rem; /* Size of the arrow */
-    color: white;
-    transition: transform 0.3s ease; /* Smooth rotation */
-}
-
-.signout-button {
-    color: #1b1f27;
-    background: #f4c542;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    position:sticky;
-}
-
-.weather-widget{
-    position: fixed;
-    grid-area: 4 / 1 / 6 / 3;
-    height: 100%;
-    width: 100%;
-}
-.news-widget {
-    grid-area: 1 / 5 / 6 / 6;
-    overflow-y: auto; /* Enables vertical scrolling */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #f4c542 transparent; /* Custom scrollbar */
-    position: fixed;
-    height: 100%;
-    width: 100%;
-}
-.quote-widget{
-    position: fixed;
-    grid-area: 1 / 3 / 2 / 5;
-    height: 100%;
-    width: 100%;
-    place-items: center;
-}
-.meme-widget{
-    position: fixed;
-    grid-area: 2 / 3 / 5 / 5;
-    height: 100%;
-    width: 100%;
-    place-items: center;
-}
-.meme-widget img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-.funfact-widget {
-    grid-area: 1 / 1 / 4 / 3;
-    height: 100%;
-    width: 100%;
-}
-/* Custom scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
-.news-widget::-webkit-scrollbar {
-    width: 6px;
-}
-
-.news-widget::-webkit-scrollbar-thumb {
-    background: #f4c542;
-    border-radius: 10px;
-}
-
-.news-widget::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-
-.weather-widget, .news-widget, .quote-widget, 
-.meme-widget, .history-widget, .funfact-widget {
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(2px);
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    padding: 20px;
-}
-
-
 .weather-widget {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 5%;
+}
+.holder::-webkit-scrollbar {
+  width: 8px;
 }
 
-.weather-icon {
-    width: 50px;
-    height: 50px;
+.holder::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
 }
 
-
-
-h2 {
-    font-size: 2vw;
-    margin-bottom: 10px;
+.holder::-webkit-scrollbar-thumb {
+  background: #b6b09f;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
 }
 
-p {
+.holder::-webkit-scrollbar-thumb:hover {
+  background: #a09a8a;
+}
+
+.weather-widget,
+.news-widget,
+.meme-widget,
+.funfact-widget {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-widget p,
+.news-widget p,
+.funfact-widget p,
+.news-widget h2,
+.funfact-widget h2 {
+  margin: 0;
+  padding: 0;
+}
+.hometitle {
+  text-align: center;
+  font-size: 6rem;
+}
+.newscontent,
+.funfactcontent {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.meme-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  border: 10px solid #252525;
+}
+.cont3 {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.cont3-cont {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.cont1 .items {
+  width: 100%;
+  height: 100%;
+}
+.prof {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+.prof p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ...  */
+  max-width: 100%;
+  display: inline-block;
+}
+.home-option {
+  font-size: 0.9rem;
+}
+.weather.active,
+.news.active,
+.meme.active,
+.fact.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #a09a8a;
+  color: #b6b09f;
+}
+
+.weather:hover,
+.prof:hover,
+.news:hover,
+.meme:hover,
+.fact:hover {
+  background-color: rgb(27, 27, 27);
+}
+.prof .homeimg2 {
+  height: 30px;
+  width: 30px;
+  border: 1px solid wheat;
+  margin: 0;
+  gap: 0;
+  padding: 0;
+}
+@media (max-width: 480px) and (max-width: 760px) {
+  .home-logo {
+    height: 20px;
+    width: 20px;
+  }
+  .logo-cont {
+    margin-left: 20%;
+  }
+  .home-cont {
+    gap: 10px;
+  }
+  .settings-cont,
+  .chat-cont,
+  .logout-cont,
+  .img-cont,
+  .homeic-cont,
+  .notif-cont {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+  .home-homeimg {
+    height: 25px;
+    width: 25px;
+    border: 2px solid white;
+  }
+
+  .weather-widget {
+    margin-top: 10%;
+  }
+  .holder::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .hometitle {
+    font-size: 2.5rem;
+  }
+  .cont1 {
+    width: 25%;
+  }
+  .cont2 {
+    width: 60%;
+  }
+  .newscontent,
+  .funfactcontent {
     font-size: 1rem;
-    color: #f5f5f5;
+  }
+  .cont3 {
+    width: 15%;
+  }
+  .prof {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+  }
+  .home-option {
+    font-size: 0.5rem;
+  }
+  .prof .homeimg2 {
+    height: 20px;
+    width: 20px;
+  }
 }

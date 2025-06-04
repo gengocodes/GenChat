@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import LandingPage from "./LandingPage/LandingPage";
 import HomePage from "./HomePage/HomePage";
-import PostRoom from "./Post/PostRoom/PostRoom";
 import Profile from "./Profile/Profile";
 import Settings from "./Settings/Settings";
 import Updated from "./Settings/Updated/Updated";
@@ -44,10 +43,6 @@ const App: React.FC = () => {
           <Route
             path="/home"
             element={isAuthenticated ? <HomePage /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/postroom"
-            element={isAuthenticated ? <PostRoom /> : <Navigate to="/" />}
           />
           <Route
             path="/signin"

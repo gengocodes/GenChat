@@ -7,10 +7,7 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use loadSli
 import React from "react";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use loadBasic, install the "@tsparticles/basic" package too.
 
-
-
 const ParticlesComponent = ({ id, className }) => {
-
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -31,7 +28,6 @@ const ParticlesComponent = ({ id, className }) => {
     console.log(container);
   };
 
-
   const options = useMemo(
     () => ({
       // background: {
@@ -48,7 +44,7 @@ const ParticlesComponent = ({ id, className }) => {
           },
           onHover: {
             enable: true,
-            mode: 'repulse', // particles will move away on hover
+            mode: "repulse", // particles will move away on hover
           },
         },
         modes: {
@@ -66,7 +62,7 @@ const ParticlesComponent = ({ id, className }) => {
           value: ["#F6F7FD", "#90A2FF", "#536FFF", "#1E43FF"], // fiery colors (orange, yellow, red)
         },
         move: {
-          direction: "none", 
+          direction: "none",
           enable: true,
           outModes: {
             default: "out", // particles will go out of view
@@ -76,7 +72,7 @@ const ParticlesComponent = ({ id, className }) => {
           straight: false, // allow particles to move in random directions to simulate flickering
         },
         number: {
-          value: 40, // number of particles
+          value: 200, // number of particles
         },
         opacity: {
           value: 0.2, // opacity to simulate the transparency of fire
@@ -115,8 +111,14 @@ const ParticlesComponent = ({ id, className }) => {
     []
   );
 
-  return <Particles id={id} className={className} init={particlesLoaded} options={options} />;
+  return (
+    <Particles
+      id={id}
+      className={className}
+      init={particlesLoaded}
+      options={options}
+    />
+  );
 };
 
 export default React.memo(ParticlesComponent);
-

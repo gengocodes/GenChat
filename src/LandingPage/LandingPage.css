@@ -1,364 +1,371 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Limelight&family=Pixelify+Sans:wght@400..700&display=swap");
 
 /* Roboto, Lato, Poppins, Exo 2, Raleway, DM Serif Display */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-     font-family: 'Raleway'; /* Exo 2, Raleway */
-}
-
-body {
-    background: linear-gradient(160deg, #070f21, #313944);
-}
-
-.landing-container {
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: 5vw 60vw 30vw 5vw; /* columns */
-    grid-template-rows: 10vh 80vh 10vh; /* rows */
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    min-height: 100vh;
-    max-height: 100vh;
-    min-width: 100vw;
-    max-width: 100vw;
-    z-index: 0;
-    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);
-}
-.landing-logo{
-  height: 10vh;
-  width: 5vw;
-  margin: 1vh 0 2vh 0;
-}
-.div1 { 
-  grid-area: 2 / 2 / 3 / 3; 
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-.div1 .info{
-  margin-left: 10%;
-  margin-top: -30%;
-}
-.div1 h1 {
-  font-family: "DM Serif Display", serif;
-  font-size: 6vw;
-  background: linear-gradient(
-    to right,
-    rgb(188, 254, 255) 0%,
-    rgb(0, 9, 50) 100%,
-    rgb(255,255,255) 100%
-  );
-  background-size: 300% 100%;
-  margin-bottom: 0.5vh;
-  
-  /* Apply gradient to text */
-  -webkit-background-clip: text;
-  background-clip: text; /* Standard property */
-  -webkit-text-fill-color: transparent; /* For WebKit browsers */
-
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), /* Inner */
-               -3px -3px 5px rgba(255, 255, 255, 0.2); /* Outer */
-  transition: background-position 1s ease-in-out, 
-              transform 0.3s ease-in-out, 
-              text-shadow 0.3s ease-in-out;
-}
-
-.div1 h1:hover {
-  background-position: -100% 0;
-
-  transform: scale(1.08);
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), /* Inner */
-  -3px -3px 5px rgba(255, 255, 255, 0.2); /* Outer */
-}
-.div1 h4{
-  font-family: "DM Serif Display", serif;
-  margin-left: 0.5vw;
-  font-size: 2vw;
-}
-.gengo-bit{
-  font-family: "DM Serif Display", serif;
-  font-size: 2vw;
-  color:lightblue;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  font-weight: 1000;
-}
-.gengo-bit:hover{
-  
-  transform: scale(1.05);
-}
-.div2 {
-  grid-area: 2 / 3 / 3 / 4; 
-  flex-direction: column;
-  z-index: 100;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.div2 form {
-  background: transparent;
-  backdrop-filter: blur(2px); /* Glass effect */
-  -webkit-backdrop-filter: blur(2px); /* Safari support */
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2; /* Make sure form content stays on top */
-  position: relative;
-  border-radius: 20px;
-}
-
-.div2 form::before {
-  content: ""; /* Make sure the pseudo-element is displayed */
-  position: absolute; /* Absolute positioning to sit inside the form */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid #f8f8f8;
-  border-radius: 5px;
-  background: radial-gradient(circle, rgb(0, 9, 50) 0%, rgba(0, 9, 114, 1) 60%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  border-radius: 20px; /* Match the form's border radius */
-  z-index: -1; /* Place the gradient behind the form's content */
-}
-
-.div2 form:hover::before {
-  opacity: 1;
-}
-
-.div2 form .input-box {
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1vh;
-}
-
-.div2 form .input-box input {
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border: 0.8px solid #f8f8f8;
-    border-radius: 5px;
-    color: #f8f8f8;
-    font-size: 1vw;
-    transition: 0.5s ease;
-    z-index: 9;
-    margin: 0; /* Ensure no extra margin */
-    box-sizing: border-box; /* Ensure padding is within the width */
-}
-.div2 form .input-box input:hover {
-  background-color: rgb(0, 9, 50);
-}
-
-.div2 form .links {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;  /* Ensures the flex container takes up the full width */
-  gap: 1rem;  /* Adjust this value to control how close or far the links are */
-}
-
-.div2 form .links button {
-  background: transparent;
-  font-family: "Raleway";
   margin: 0;
   padding: 0;
-  font-weight: 100;
-  font-size: 1vw;
-  margin: 0 0.5vw 0 0.5vw;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans"; /* Exo 2, Raleway */
 }
-
-.socmed-links{
-  margin: 5vh 0 5vh 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.socmed-links p{
-  margin-bottom: -3vh;
-  font-size: 1vw;
-}
-
-.div2 form .submit {
-  margin: 1vh 0;
-  border: 0.5px solid transparent;  /* Initially set the border to transparent */
-  outline: none;
-  cursor: pointer;
-  color: #f8f8f8;
-  background: #1d1b3b;
-  font-size: 1vw;
-  height: 3vw;
-  width: 100%;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 500;
-  display: flex;
-  align-items: center;  /* Vertically center */
-  justify-content: center; /* Horizontally center */
-  transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transition for both background and border */
-}
-
-.div2 form .submit:hover {
-  background: rgb(39, 39, 54);
-  border: 0.5px solid #f8f8f8;  /* Change the border color on hover */
-}
-.social-icon {
-  width: 5vw;
-  height: 8vh;
+.main-landing {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Make buttons circular */
+}
+#landing-background {
+  z-index: 1;
+}
+.landing-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  background: transparent;
+  backdrop-filter: blur(7px);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.land-head {
+  margin-top: 5%;
+  height: 10%;
+  width: 80%;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+}
+.logo-cont {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.developer {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.developer p {
+  font-size: 1rem;
+  font-weight: 100;
+}
+.nav-link {
+  border-radius: 10px;
+}
+.nav-link:hover {
   cursor: pointer;
-  margin: -3vh -1vw 0 -1vw;
-  transition: all 0.3s ease;
+  border-bottom: 1px solid white;
+}
+.land-body {
+  height: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.div1 {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div1 .info {
+  margin-top: -25%;
+  margin-right: 10%;
 }
 
-.social-icon svg {
-  width: 50%; /* Set SVG size */
-  height: 50%;
+.div1 h1 {
+  font-family: "Pixelify Sans", serif;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: #b6b09f;
+  font-weight: 500;
+}
+.div1 h4 {
+  font-family: "Pixelify Sans", serif;
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+.gengo-bit {
+  font-family: "Pixelify Sans", serif;
+  font-size: 1.8rem;
+  color: #dbd5c1;
+
+  text-decoration: none;
+  font-weight: 300;
 }
 
-.social-icon:hover {
-  background-color: #365899; /* Darker blue on hover */
+#password,
+#username {
+  width: 100%;
+  font-weight: 100;
 }
-.signin-button{
+.div2 {
+  height: 80%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.form-cont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div2 .login-form {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  box-shadow: 0px 10px 1px rgb(182 176 159), 0 10px 20px rgb(182 176 159);
+}
+.login-form:hover {
+  background-color: rgb(7, 7, 7);
+  border: 1px solid white;
+}
+.login-input-box {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1d1d1d;
+  border-radius: 8px;
+  width: 100%;
+}
+.submit {
   background: transparent;
+  font-size: 1rem;
+  border-bottom: 1px solid white;
 }
-.signin-button:hover{
+.submit:hover {
   background: transparent;
+  color: #b6b09f;
+}
+.submit:active {
+  color: lightblue;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.link1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+.link2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.forget-pass,
+.sign-up {
+  font-size: 0.5rem;
+  background-color: transparent;
+  font-weight: 100;
+}
+.forget-pass:hover,
+.sign-up:hover {
+  font-size: 0.5rem;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+}
+.socmed-links {
+  margin-top: 5%;
+}
+.socmed-links p {
+  font-size: 0.7rem;
+  font-weight: 100;
+}
+.socmed-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+.google,
+.facebook {
+  background: transparent;
+  margin: 0;
+}
+.google:hover,
+.facebook:hover {
+  background: transparent;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 10px;
 }
 
+@media (max-width: 480px) and (max-width: 760px) {
+  .land-head {
+    margin-top: 2%;
+  }
+  .landing-logo {
+    height: 30px;
+    width: 30px;
+  }
+  .developer {
+    gap: 5%;
+  }
+  .developer p {
+    font-size: 0.7rem;
+    font-weight: 100;
+  }
+  .nav-link {
+    padding: 0;
+  }
+  .land-body {
+    height: 90%;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+  .div1 {
+    height: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .div1 .info {
+    margin-top: 0%;
+    margin-right: 0%;
+  }
 
-@media (max-width:480px) and (max-width:760px){
-  .landing-container {
-    grid-template-columns: 0vw 100vw 0vw; /* columns */
-    grid-template-rows: 0vh 30vh 70vh 0vh; /* rows */
+  .div1 h1 {
+    margin-bottom: 0rem;
   }
-  .landing-logo{
-    height: 10vh;
-    width: 20vw;
+
+  .div2 {
+    height: 100%;
+    width: 80%;
   }
-  .div1 { 
-    grid-area: 2 / 2 / 3 / 3; 
+  .form-cont {
     height: 100%;
     width: 100%;
-    justify-content: left;
-    align-items: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .div1 .info{
+
+  .div2 .login-form {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    box-shadow: 0px 10px 1px rgb(182 176 159), 0 10px 20px rgb(182 176 159);
+  }
+  .login-form:hover {
+    background-color: rgb(7, 7, 7);
+    border: 1px solid white;
+  }
+  .login-input-box {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .submit {
+    background: transparent;
+    font-size: 1rem;
+    border-bottom: 1px solid white;
+  }
+  .submit:hover {
+    background: transparent;
+    color: #b6b09f;
+  }
+  .submit:active {
+    color: lightblue;
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .link1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+  }
+  .link2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  .forget-pass,
+  .sign-up {
+    font-size: 0.5rem;
+    background-color: transparent;
+    font-weight: 100;
+  }
+  .forget-pass:hover,
+  .sign-up:hover {
+    font-size: 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .socmed-links {
     margin-top: 5%;
   }
-  .info2{
+  .socmed-links p {
+    font-size: 0.7rem;
+    font-weight: 100;
+  }
+  .socmed-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
   }
-  .div1 h1 {
-    font-size: 10vw;
-    background: linear-gradient(
-      to right,
-      rgb(163, 253, 255) 0%,
-      rgb(0, 9, 50) 100%,
-      rgb(255,255,255) 100%
-    );
-    background-size: 300% 100%;
-    margin-bottom: 0.5vh;
-    
-    /* Apply gradient to text */
-    -webkit-background-clip: text;
-    background-clip: text; /* Standard property */
-    -webkit-text-fill-color: transparent; /* For WebKit browsers */
-  
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), /* Inner */
-    -2px -2px 4px rgba(255, 255, 255, 0.1); /* Outer */
-    transition: background-position 1s ease-in-out, 
-                transform 0.3s ease-in-out, 
-                text-shadow 0.3s ease-in-out;
+  .google,
+  .facebook {
+    background: transparent;
+    margin: 0;
   }
-  
-  .div1 h1:hover {
-    background-position: -100% 0;
-  
-    transform: scale(1.08);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), /* Inner */
-    -2px -2px 4px rgba(255, 255, 255, 0.1); /* Outer */
-  }
-  .div1 h4{
-    margin-left: 0.2vw;
-    font-size: 5vw;
-  }
-  .gengo-bit{
-    margin-left: 1vw;
-    font-size: 5vw;
-    display: inline-block;
-  }
-  .div2 {
-    grid-area: 3 / 2 / 4 / 3;
-    border-radius: 0px;
-  }
-  .div2 form {
-    height: 100%;
-    border-radius: 0px;
-  }
-  
-  .div2 form::before {
-    border: 0.5px solid #f8f8f8;
-    border-radius: 0px; /* Match the form's border radius */
-  }
-  .div2 form .input-box input {
-    font-size: 3vw;
-    margin-left: 15%;
-    margin-right: 10%;
-    width: 70%;
-  }
-  .div2 form .links button {
-    font-size: 3vw;
-    margin: 0 0.8vw 0 0.8vw;
-  }
-  .socmed-links p{
-    margin-bottom: -3vh;
-    font-size: 3vw;
-  }
-  .div2 form .submit {
-    font-size: 3vw;
-    height: 10vw;
-    margin: 2vh auto 2vh auto;
-    width: 40%;
-  }
-  .social-icon {
-    width: 20vw;
-    height: 12vh;
-    border-radius: 50%; /* Make buttons circular */
-    margin: -3vh -1vw 0 -1vw;
-  }
-  .social-icon svg {
-    width: 100%; /* Set SVG size */
-    height: 50%;
+  .google:hover,
+  .facebook:hover {
+    background: transparent;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 10px;
   }
 }
-
-  

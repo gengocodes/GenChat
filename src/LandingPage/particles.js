@@ -7,10 +7,7 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use loadSli
 import React from "react";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use loadBasic, install the "@tsparticles/basic" package too.
 
-
-
 const ParticlesComponent = ({ id, className }) => {
-
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -31,12 +28,11 @@ const ParticlesComponent = ({ id, className }) => {
     console.log(container);
   };
 
-
   const options = useMemo(
     () => ({
       background: {
         color: {
-          value: "",
+          value: "#000",
         },
       },
       fpsLimit: 120,
@@ -44,11 +40,11 @@ const ParticlesComponent = ({ id, className }) => {
         events: {
           onClick: {
             enable: true,
-            mode: "push", //push = add more, repulse 
+            mode: "push", //push = add more, repulse
           },
           onHover: {
             enable: true,
-            mode: 'repulse', //grab
+            mode: "repulse", //grab
           },
         },
         modes: {
@@ -63,13 +59,13 @@ const ParticlesComponent = ({ id, className }) => {
       },
       particles: {
         color: {
-          value: "#FFFFFF",
+          value: "#DFD0B8",
         },
         links: {
-          color: "#FFFFFF",
+          color: "#DFD0B8",
           distance: 150,
           enable: true,
-          opacity: 0.2,
+          opacity: 0.4,
           width: 1,
         },
         move: {
@@ -86,10 +82,10 @@ const ParticlesComponent = ({ id, className }) => {
           density: {
             enable: true,
           },
-          value: 400, // how many links
+          value: 200, // how many links
         },
         opacity: {
-          value: 0.4,
+          value: 0.5,
         },
         shape: {
           type: "circle",
@@ -100,11 +96,17 @@ const ParticlesComponent = ({ id, className }) => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
-  return <Particles id={id} className={className} init={particlesLoaded} options={options} />;
+  return (
+    <Particles
+      id={id}
+      className={className}
+      init={particlesLoaded}
+      options={options}
+    />
+  );
 };
 
 export default React.memo(ParticlesComponent);
-

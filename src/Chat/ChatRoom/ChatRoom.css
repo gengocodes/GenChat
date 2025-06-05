@@ -1,159 +1,105 @@
-body {
-  font-family: "Poppins", sans-serif;
-}
-.background {
-  background: radial-gradient(
-    circle,
-    rgb(0, 9, 50) 40%,
-    rgba(0, 9, 114, 0.9) 80%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-}
-.chatroom-header {
-  background: radial-gradient(
-    circle,
-    rgb(0, 9, 50) 40%,
-    rgba(0, 9, 114, 0.9) 80%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  height: 60px;
-  color: #ffffff;
-  position: sticky;
+.chatroom-main {
+  height: 100vh;
   width: 100vw;
-  top: 0;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 99;
-  padding: 0 20px;
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
+  background-color: black;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.chat-cont-1 {
+  height: 100%;
+  width: 100%;
 }
 main {
-  width: 50vw;
+  height: 90%;
+  width: 100%;
   padding: 20px;
-  height: calc(100vh - 120px); /* 120px is header height */
-  margin: auto;
-  overflow-y: auto;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 12px;
   background: radial-gradient(
     circle,
-    rgb(0, 9, 50) 40%,
-    rgba(0, 9, 114, 0.9) 80%,
-    rgba(0, 0, 0, 0.9) 100%
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(255, 255, 255, 0.01) 100%
   );
 }
 main::-webkit-scrollbar {
-  width: 1rem;
+  width: 5px;
 }
 main::-webkit-scrollbar-track {
-  background: #2c2f38;
+  background: rgba(71, 71, 71, 0.05);
+  border-radius: 50px;
 }
 main::-webkit-scrollbar-thumb {
-  background: #8a4baf;
-  border-radius: 20px;
+  background: #b6b09f;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
 }
-.chatrooms {
-  position: fixed;
-  background: radial-gradient(
-    circle,
-    rgb(0, 9, 50) 40%,
-    rgba(0, 9, 114, 0.9) 80%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  left: 0;
-  bottom: 0;
-  height: 92vh;
-  width: 25vw;
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  z-index: 3;
-  overflow-y: auto;
-  overflow-x: hidden;
+main::-webkit-scrollbar-thumb:hover {
+  background: #a09a8a;
 }
-.roominfo {
-  position: fixed;
-  background: radial-gradient(
-    circle,
-    rgb(0, 9, 50) 40%,
-    rgba(0, 9, 114, 0.9) 80%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  right: 0;
-  bottom: 0;
-  height: 92vh;
-  width: 25vw;
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  z-index: 3;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-form {
-  position: sticky;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 50vw;
+
+.chat-form {
+  border-top: 1px solid wheat;
+  height: 10%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 10px 20px;
+  justify-content: space-evenly;
   align-items: center;
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
 }
 .inputimage {
-  width: 20vw;
-}
-.inputmessage {
-  width: 40vw;
-}
-form input {
+  width: 30%;
   padding: 10px;
   font-size: 1rem;
-  background: #ffffff17;
+  background: #ffffff18;
+  color: #63686e;
+  border-radius: 8px;
+  border: none;
+}
+.inputmessage {
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #ffffff18;
   color: #fff;
   border-radius: 8px;
   border: none;
 }
-form input::placeholder {
-  color: #9aa1aa;
+.inputmessage::placeholder {
+  color: #63686e;
 }
-form button {
-  background-color: #4a90e2;
+.submitchat {
+  background: transparent;
   color: white;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 100;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
   padding: 10px 15px;
+  border-bottom: 1px solid white;
 }
-
-form button:hover {
-  background-color: #8d8d8d;
+.submitchat:hover {
+  background: #0a0a0a;
+  color: #b6b09f;
 }
-
-@media (max-width: 768px) {
-  form button {
-    font-size: 1rem;
+@media (max-width: 480px) and (max-width: 760px) {
+  .inputimage {
+    width: 30%;
+    padding: 10px 10px;
+    font-size: 0.5rem;
+    text-align: center;
   }
-
-  form input {
-    font-size: 1rem;
+  .inputmessage {
+    width: 30%;
+    padding: 10px 10px;
+    font-size: 0.7rem;
+    text-align: center;
   }
-}
-
-@media (max-width: 480px) {
-  form button {
-    font-size: 0.9rem;
-  }
-
-  form input {
-    font-size: 0.9rem;
+  .submitchat {
+    font-size: 0.8rem;
+    padding: 10px 10px;
+    border-bottom: 1px solid white;
   }
 }

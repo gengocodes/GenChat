@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  backdrop-filter: blur(5.5px);
+  backdrop-filter: blur(6px);
 }
 .settings-main-cont2 {
   height: 100%;
@@ -112,17 +112,24 @@
   font-size: 1rem;
   width: 100%;
   margin-left: -5px;
+  padding: 10px;
+  font-size: 1rem;
+  background: #ffffff18;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
 }
 .settings-submit {
   margin-top: 20%;
   background: transparent;
   font-size: 1rem;
-  border-bottom: 1px solid white;
-  transition: none;
+  font-weight: 100;
+  border: none;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-bottom: 1px solid white;
 }
 .settings-submit:hover {
   background: #0a0a0a;
@@ -143,6 +150,12 @@
   font-size: 0.8rem;
   font-weight: 0;
   margin-bottom: -5%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #ffffff07;
+  color: #63686e;
+  border-radius: 8px;
+  border: none;
 }
 .hide {
   display: none;

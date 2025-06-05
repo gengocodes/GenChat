@@ -24,6 +24,7 @@
   justify-content: flex-end;
   align-items: center;
   color: #b6b09f;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
 }
 .home-div1 {
   width: 25%;
@@ -151,16 +152,22 @@
   align-items: center;
   justify-content: flex-start;
   gap: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(255, 255, 255, 0.07) 100%
+  );
 }
 .weather-widget {
   margin-top: 5%;
 }
 .holder::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 .holder::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(71, 71, 71, 0.05);
   border-radius: 50px;
 }
 
@@ -206,7 +213,7 @@
   height: 100%;
   width: 100%;
   border-radius: 0;
-  border: 10px solid #252525;
+  border: 10px solid #000000;
 }
 .cont3 {
   height: 100%;

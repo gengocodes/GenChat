@@ -107,11 +107,12 @@ const LandingPage: React.FC = () => {
           <div className="div2">
             <div className="form-cont">
               <form className="login-form">
-                <div className="login-input-box">
+                <div className="login-input-box ">
                   <input
                     type="text"
                     id="username"
                     placeholder="Username"
+                    className="login-input"
                     required
                   />
                 </div>
@@ -120,6 +121,7 @@ const LandingPage: React.FC = () => {
                     type="password"
                     id="password"
                     placeholder="Password"
+                    className="login-input"
                     required
                   />
                 </div>

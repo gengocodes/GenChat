@@ -16,6 +16,7 @@
 .home-logo {
   height: 30px;
   width: 30px;
+  border: none;
 }
 .home-selection {
   flex-direction: row;

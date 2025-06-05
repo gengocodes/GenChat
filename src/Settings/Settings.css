@@ -1,339 +1,220 @@
-.settings{
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);    text-align: center;
-    z-index: 0;
+.main-settings {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  overflow: hidden;
 }
-.settingsarea{
-    position: static;
-    z-index: 0;
+.settings-cont1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  backdrop-filter: blur(5.5px);
 }
-.settings-selection{
-    margin-left: 9vh;
-    height: 100vh;
-    width: 40vw;
-    position: static;
-    bottom: 0;
-    left: 0;
-    background: radial-gradient(circle, rgb(0, 9, 50) 40%, rgba(0, 9, 114, 0.9) 80%, rgba(0, 0, 0, 0.9) 100%);
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-    z-index: 0;
-    display: flex;
-    flex-wrap: wrap;
+.settings-main-cont2 {
+  height: 100%;
+  width: 75%;
+  border-left: 1px solid wheat;
+  border-right: 1px solid wheat;
+  color: white;
+  display: flex;
+  overflow: hidden;
 }
-.settings-cont{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-out forwards; 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+.settings-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.settings-cont:hover{
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+.settings-cont-1 {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.settings-cont-2 {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.option-settings {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: 100;
+}
+.greater-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5%;
+}
+
+.set-title {
+  font-size: 1.6rem;
+  color: #ddd5c0;
+}
+
+.settings-cont:hover {
+  background-color: rgb(27, 27, 27);
 }
 .settings-cont.active {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #00000056;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #a09a8a;
+  color: #b6b09f;
 }
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.set-cont2-cont {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-.settings-cont h1{
-    margin-left: 3vh;
-    margin-top: 3vh;
-    font-size: 2vh;
-    white-space: nowrap;  /* Prevents text from wrapping */
-    overflow: hidden;      /* Hides overflow text */
-    text-overflow: ellipsis; /* Adds "..." if text is too long */
-    cursor: pointer;
+.settings-forms-1 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
-.greater-icon{
-    margin-top: 3vh;
-    margin-right: 2vh;
-    height: 2vh;
-    width: 2vh;
+.set-cont2-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  margin-top: 10%;
+  margin-bottom: 20%;
 }
-.settings-forms{
-    position: static;
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
-    border: none;
-    z-index: 0;
-    box-shadow: none;
-    display: flex;
+.rowgap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
 }
-form {
-    animation: fadeInUp 0.5s ease-out forwards;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-/* Animation to fade and slide the form into view */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.form1-label {
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 5px;
+  font-weight: 100;
 }
-.div-first-name{
-    width: 100%;
-    height: 100%;
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
-.div-first-name h1{
-    width: 100%;
-    margin-top: 20%;
-    display: block;
-    position: static;
-    font-size: 4vw;
-    font-family: "Quicksand", "Poppins", serif;
-    font-weight: 1000;
-}
-.div-first-name label{
-    width: 100%;
-    display: block;
-    position: static;
-    margin-top: 5vh;
-    margin-bottom: -4.3vh;
-    font-size: 2vw;
-}
-.div-first-name .input-firstname, .input-lastname{
-    margin-left: 25%;
-    font-size: 2vw;
-    right: auto;
-    width: 50%;
-    display: block;
-    position: static;
-    margin-top: 5vh;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-.div-first-name .input-firstname:hover, .input-lastname:hover{
-    background-color: rgba(255, 255, 255, 0.2);
-}
-.div-first-name .input-firstname:focus, .input-lastname:focus{
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
+.form1-input {
+  font-size: 1rem;
+  width: 100%;
+  margin-left: -5px;
 }
 .settings-submit {
-    margin-left: 25%;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: static;
-    margin-top: 3vw;
-    cursor: pointer;
-    background-color: rgba(0, 225, 255, 0.1);
-    border: none;
-    padding: 10px;
-    font-size: 2vw;
+  margin-top: 20%;
+  background: transparent;
+  font-size: 1rem;
+  border-bottom: 1px solid white;
+  transition: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .settings-submit:hover {
-    background-color: rgba(0, 225, 255, 0.5);
+  background: #0a0a0a;
+  color: #b6b09f;
 }
 .settings-submit:active {
-    background-color: rgba(0, 225, 255, 0.8);
+  color: lightblue;
 }
-.settings-submit:disabled {
-    background-color: rgba(0, 225, 255, 0.8);
-    cursor: not-allowed;
+.update-homeimg {
+  height: 10rem;
+  width: 10rem;
+  margin-top: -8%;
+  border: 0.2rem solid rgba(255, 255, 255, 0.2);
 }
-
+.input-img {
+  margin-top: 5%;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 0;
+  margin-bottom: -5%;
+}
+.input-img:active {
+  border: 1px solid white;
+}
+.prof-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
 .loading-spinner {
-    width: 2vw;
-    height: 2vw;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 0.8s linear infinite;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.settings-forms-profilepic{
-    position: static;
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
-    border: none;
-    z-index: 0;
-    box-shadow: none;
-    display: flex;
-}
-.settings-forms-profilepic h1{
+@media (max-width: 480px) and (max-width: 760px) {
+  .option-settings {
+    font-size: 0.5rem;
+  }
+  .greater-icon {
+    height: 10px;
+    width: 10px;
+    margin-right: 10%;
+  }
+
+  .set-title {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .set-cont2-title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .rowgap {
     width: 100%;
-    margin-top: 20%;
-    display: block;
-    position: static;
-    font-size: 4vw;
-    font-family: "Quicksand", "Poppins", serif;
-    font-weight: 1000;
-}
-.prof-container{
-    width: 100%;
-    height: 100%;
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
-.update-homeimg{
-    margin-top: 3vh;
-    height: 15vw;
-    width: 15vw;
-    border: 5px;
-    border-style: double;
-    top: 0;
-}
-.input-img{
-    margin-left: 25%;
-    font-size: 1vw;
-    right: auto;
-    width: 50%;
-}
-.input-img {
-    display: none; /* Hides the default file input */
-}
-
-.custom-file-upload {
-    margin-top: 3vh;
-    margin-left: 25%;
-    margin-bottom: 1vw;
-    font-size: 1vw;
-    right: auto;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 8px 12px;
-    font-size: 1.2vw;
-    border: 1px groove white;
-    border-radius: 10px;
-    cursor: pointer;
-    display: block;
-    transition: background-color 0.3s ease;
-}
-
-.custom-file-upload:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.custom-file-upload:active {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.file-name {
-    font-size: 0.9vw;
-    color: white;
-}
-.settings-forms-profilepic .settings-submit{
-    margin-top: 2vw;
-}
-.navSettings{
-    position: absolute;
-    min-height: 100vh;
-    max-height: 100vh;
-    width: 9vh;
-    z-index: 100;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
-    transition: width 0.3s ease-in-out;
-}
-.navSettings:hover{
-    width: 20vh;
-}
-.settings-logo-cont{
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    border-bottom: 1px groove rgba(255, 255, 255, 0.2);
-}
-.settings-user-cont{
-    margin-top: 1.5vh;
-}
-.settings-homeimg{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
-    height: 3vh;
-    width: 3vh;
-    flex-shrink: 0; /* Prevents shrinking */
-    border: outset;
-    border-width: 1px;
-}
-.navSettings .settings-logo, .settings-home-icon, .settings-logout-icon, .settings-chat-icon, .settings-post-icon{
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
-    margin-left: 3vh;
-    border-radius: 0px;
-    bottom: 0;
-    color: white;
-    height: 3vh;
-    width: 3vh;
-}
-.settings-nav-text, .settings-genchat, .settings-user-name {
-    opacity: 0;
-    font-size: 1.5vh;
-    color: white;
-    margin-left: -1.5vh;
-    white-space: nowrap;  /* Prevents text from wrapping */
-    overflow: hidden;      /* Hides overflow text */
-    text-overflow: ellipsis; /* Adds "..." if text is too long */
-    display: block;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out 0.3s, ease-in-out 0.3s; 
-    /* Delays transition by 0.3s to match navHome */
-}
-.settings-nav-text:hover, .settings-genchat:hover, .settings-user-name:hover {
-    color: yellow;
-}
-.settings-user-name {
-    display: inline;
-}
-.settings-logo-cont,
-.settings-user-cont,
-.settings-home-icon-cont, 
-.settings-post-icon-cont, 
-.settings-chat-icon-cont, 
-.settings-logout-icon-cont {
-    display: flex;
-    align-items: center;
-}
-.navSettings:hover .settings-nav-text, .navSettings:hover .settings-genchat, .navSettings:hover .settings-user-name{
-    opacity: 1;
-    visibility: visible;
-}
-.navSettings .settings-logo-cont:hover, .settings-user-cont:hover, .settings-chat-icon-cont:hover, .settings-post-icon-cont:hover, 
-.settings-home-icon-cont:hover, .settings-logout-icon-cont:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: yellow;
-    transition:  ease-in-out 0.1s; 
-}
-
-@media (max-width:480px) and (max-width:760px){
-    .settings-cont h1{
-        margin-left: 1.2vh;
-        font-size: 1.2vh;
-    }
-    .greater-icon{
-        height: 1.2vh;
-        width: 1.2vh;
-    }
-    .settings-selection{
-        width: 30vw;
-    }
+  }
+  .form1-label {
+    font-size: 0.8rem;
+  }
+  .form1-input {
+    font-size: 0.8rem;
+  }
+  .settings-submit {
+    margin-top: 10%;
+    font-size: 0.8rem;
+  }
+  .update-homeimg {
+    height: 5rem;
+    width: 5rem;
+  }
+  .input-img {
+    font-size: 0.5rem;
+  }
+  .prof-container {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .loading-spinner {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 }

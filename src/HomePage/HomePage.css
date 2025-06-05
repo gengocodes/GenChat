@@ -2,6 +2,7 @@
   height: 100vh;
   width: 100vw;
   background-color: black;
+  overflow: hidden;
 }
 .homepage-container {
   height: 100%;
@@ -227,6 +228,7 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 20px;
+  margin-top: 10px;
 }
 .prof p {
   white-space: nowrap;
@@ -261,6 +263,9 @@
   margin: 0;
   gap: 0;
   padding: 0;
+}
+.weather-widget {
+  padding-top: 25%;
 }
 .funfact-widget {
   padding-bottom: 50%;

@@ -9,10 +9,6 @@ import HomeFilledIcon from "@mui/icons-material/HomeFilled";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 import logo from "../assets/GenChat.png";
-import messageicon from "../assets/message-icon.svg";
-import posticon from "../assets/post-icon.png";
-import homeicon from "../assets/home-icon.png";
-import logouticon from "../assets/logout-icon.png";
 import greatericon from "../assets/greater-icon.png";
 
 import { auth, firestore, storage } from "../FirebaseConfig"; // Ensure storage is imported
@@ -96,8 +92,6 @@ const Settings: React.FC = () => {
       console.error("Error updating photo URL:", error);
     }
   };
-
-  const navChatRoom = () => navigate("/chatroom");
   const handleSignOut = () => {
     auth.signOut(); // Sign out the user
     navigate("/"); // Redirect to LandingPage
@@ -361,6 +355,7 @@ const Settings: React.FC = () => {
                           required
                           accept="image/*"
                         />
+                        <p className="hide">{fileName}</p>
                         <button
                           type="submit"
                           value="Submit"

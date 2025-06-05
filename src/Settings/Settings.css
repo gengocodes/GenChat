@@ -3,6 +3,8 @@
   width: 100vw;
   background-color: black;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .settings-cont1 {
   height: 100%;

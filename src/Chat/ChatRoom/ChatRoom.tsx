@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./ChatRoom.css";
 import ChatMessage from "../ChatMessage/ChatMessage";
-import SignOut from "../../Auth/SignOut/SignOut";
-import BackButton from "../../Buttons/BackButton/BackButton";
 import { auth, firestore, storage } from "../../FirebaseConfig";
 import Background from "../../LandingPage/particles";
 import logo from "../../assets/GenChat.png";
@@ -43,7 +41,6 @@ const ChatRoom: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [formValue, setFormValue] = useState<string>("");
   const [image, setImage] = useState<File | null>(null);
-  const [activeSection, setActiveSection] = useState("weather");
   const [activeSection2] = useState("chat-cont");
 
   // Create a ref for the file input field to reset it after sending a message

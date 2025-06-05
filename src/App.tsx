@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import LandingPage from "./LandingPage/LandingPage";
 import HomePage from "./HomePage/HomePage";
-import Profile from "./Profile/Profile";
 import Settings from "./Settings/Settings";
 import Updated from "./Settings/Updated/Updated";
 // import Particles from './LandingPage/particles';
@@ -47,10 +46,6 @@ const App: React.FC = () => {
           <Route
             path="/signin"
             element={isAuthenticated ? <SignIn /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/profile"
-            element={isAuthenticated ? <Profile /> : <Navigate to="/" />}
           />
           <Route
             path="/settings"

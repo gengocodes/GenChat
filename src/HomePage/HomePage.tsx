@@ -128,7 +128,7 @@ function HomePage() {
                   <HomeFilledIcon className="homeic-icon" />
                 </div>
                 <div
-                  className="settings-cont"
+                  className="home-settings-cont"
                   onClick={() => navigate("/settings")}
                 >
                   {" "}

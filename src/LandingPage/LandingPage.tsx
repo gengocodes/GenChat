@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
       {memoizedBackground}
       <div className="landing-container">
         <div className="land-head">
-          <div className="logo-cont">
+          <div className="landing-logo-cont">
             <img src={Logo} className="landing-logo" alt="" />
           </div>
           <div className="developer">

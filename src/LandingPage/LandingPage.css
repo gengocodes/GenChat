@@ -52,6 +52,7 @@
 .landing-logo {
   height: 50px;
   width: 50px;
+  border: none;
 }
 .developer {
   height: 100%;
